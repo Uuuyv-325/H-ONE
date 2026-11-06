@@ -1,0 +1,5 @@
+{
+  "name": "HOne.Game.Editor",
+  "references": ["HOne.Game", "HOne.Platformer", "Unity.InputSystem"],
+  "includePlatforms": ["Editor"]
+}

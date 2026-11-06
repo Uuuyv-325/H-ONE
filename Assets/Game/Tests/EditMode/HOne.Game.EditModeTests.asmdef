@@ -1,0 +1,6 @@
+{
+  "name": "HOne.Game.EditModeTests",
+  "references": ["HOne.Game", "HOne.Platformer", "HOne.Game.Editor"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

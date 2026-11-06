@@ -1,0 +1,5 @@
+{
+  "name": "HOne.Game.PlayModeTests",
+  "references": ["HOne.Game", "HOne.Platformer", "Unity.InputSystem"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

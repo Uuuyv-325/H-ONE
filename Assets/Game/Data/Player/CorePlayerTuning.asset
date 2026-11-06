@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32f06c5845182744962df42293bba8a, type: 3}
+  m_Name: CorePlayerTuning
+  m_EditorClassIdentifier: 
+  WalkSpeed: 4.4
+  JumpHeight: 2.2
+  GravityScale: 3
+  CoyoteSeconds: 0.1
+  JumpBufferSeconds: 0.1
+  ChargeSeconds: 0.8
+  StarSpeed: {x: 10, y: 18}
+  StarRadius: 0.22
+  FlightSeconds: 1
+  FlightDistance: 18
+  ReformSeconds: 0.5

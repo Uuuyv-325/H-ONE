@@ -1,0 +1,4 @@
+{
+  "name": "HOne.Platformer",
+  "references": ["Unity.InputSystem"]
+}
