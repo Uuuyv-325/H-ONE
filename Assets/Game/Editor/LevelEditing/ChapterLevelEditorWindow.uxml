@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:Style src="ChapterLevelEditorWindow.uss" />
+  <ui:ScrollView class="editor-root">
+    <ui:Label text="H-ONE · Chapter Level Editor" class="title" />
+    <ui:Label text="Place reusable pieces in Scene view, connect signals, then validate and save." class="description" />
+    <ui:VisualElement name="sceneTools" class="section" />
+    <ui:VisualElement name="palette" class="section" />
+    <ui:VisualElement name="connections" class="section" />
+    <ui:VisualElement name="validation" class="section" />
+    <ui:VisualElement name="selectionInspector" class="section" />
+  </ui:ScrollView>
+</ui:UXML>

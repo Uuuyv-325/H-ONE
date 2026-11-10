@@ -1,0 +1,275 @@
+{
+  "revision": "menu-transition-20261111",
+  "date": "2026-11-11",
+  "base_commit": "c8c28782e72594bf017a4ffd540c101267ac839e",
+  "scope": {
+    "ledger": [
+      "NEW-010",
+      "NEW-010-a",
+      "NEW-010-b"
+    ],
+    "delivery": [
+      "UI-06",
+      "UI-09",
+      "UI-10"
+    ],
+    "batches": [
+      "P1",
+      "P2"
+    ],
+    "status": "integrated-awaiting-art-acceptance",
+    "new_external_art": false
+  },
+  "implementation": {
+    "home_anchors": [
+      [
+        0.79,
+        0.08
+      ],
+      [
+        0.99,
+        0.92
+      ]
+    ],
+    "flash_count": 3,
+    "flash_seconds": 0.48,
+    "fade_out_seconds": 0.65,
+    "fade_in_seconds": 0.65,
+    "timer": "realtimeSinceStartupAsDouble, per fade",
+    "scene_object_ids_preserved": 228,
+    "overlay": "temporary SceneTransition/Black, sortingOrder=32767",
+    "game_title": "希腊星",
+    "home_visible_texts": [
+      "希腊星",
+      "开始第一章",
+      "操作与声音",
+      "退出游戏",
+      "Credits"
+    ],
+    "legacy_home_texts": "Subtitle and Scope empty/inactive in existing scene; omitted from new menu authoring."
+  },
+  "provenance": {
+    "code": "Project-authored presentation code; no generated images or new third-party assets",
+    "source_policy_read": "../H-ONE-arts/README.md",
+    "source_policy_sha256": "a1aa5962e74a380f08451f486a7c4b6594ecdcbc989de992df62ff420f061999",
+    "retained_asset_manifests": [
+      "Assets/Game/Art/Delivery01/manifest.json",
+      "Assets/Game/Art/Delivery01/SOURCE_USAGE.md",
+      "Assets/Game/Art/Fonts/manifest.json",
+      "Assets/Game/Art/Fonts/LICENSE.txt",
+      "Assets/Game/Audio/Music/manifest.json"
+    ]
+  },
+  "retained_dependencies": [
+    {
+      "path": "Assets/Game/Art/Delivery01/title.png",
+      "sha256": "c837dd36b81aacdbadeaec991e21acf2f74411968a9014d77c2e1f9e53939bb5"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/title.png.meta",
+      "sha256": "07763f5cebcecb6a736115a38d24ea88e5cd377a5165b91de3690e47cf91c6c2"
+    },
+    {
+      "path": "Assets/Game/Art/Fonts/MenuSans.ttf",
+      "sha256": "35bb06d7e2253f8fc205b024866d3bd2c5cf724137e7042881b2fbab556456ce"
+    },
+    {
+      "path": "Assets/Game/Art/Fonts/MenuSans.ttf.meta",
+      "sha256": "7529a7935a27213854488188ec7dca61f6e4ea0bd6439fd86064451ca3af9771"
+    },
+    {
+      "path": "Assets/Game/Audio/Music/larse_before_departure.mp3",
+      "sha256": "638b78448af117841980ee6885b12a38d7035eb4f9ee603c46f40bc6495307da"
+    }
+  ],
+  "task_files": [
+    {
+      "path": "Assets/Game/Editor/MainMenuPresentationAuthoring.cs",
+      "sha256": "3180544aa74998404c1139eede2d64f9284ce8fdd00612fd96a3ad2fa52e2ccb"
+    },
+    {
+      "path": "Assets/Game/Runtime/Audio/MenuMusic.cs",
+      "sha256": "3bec7a82c67552e60a2ac7fb95f7f4958c7cfbe936383cf3be456cc17be40fbf"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/ChapterExit.cs",
+      "sha256": "1a9350f86300208482a39b7fa010af8be3d729928e64c288c9ebb4c8301c4a7d"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/FeedbackMenuStyle.cs",
+      "sha256": "5f2bef91a377f14d7e55100b9f48d200f24868772e434560435728eb0378a8cf"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameFlow.cs",
+      "sha256": "36bf2609e3cb230f09c4dd15807df7a687598e279fb3dcb6c746763eab7be791"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/MainMenuController.cs",
+      "sha256": "94409c9150c8459c8e43688cbb98b4d099f23d2e43f70e5137ec86558d2d6443"
+    },
+    {
+      "path": "Assets/Game/Scenes/MainMenu.unity",
+      "sha256": "3dc8c4edd46ef3922110192c43db0d911f701fa3bcf649bfa4868c22a5453176"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/M2MenuFlowTests.cs",
+      "sha256": "e2019aac1d0f4ff2e75bb2db9ba0d8ad693e1ea327ae17e40fb04a08eea849df"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/MainMenuPresentationTests.cs",
+      "sha256": "95cb2e921ce6f0ad234862460d83d5823f2883b6a1d95534e205d9e649835a6b"
+    },
+    {
+      "path": "docs/01-整体架构与落地路线.md",
+      "sha256": "f92092843d20b64b2e4e9e65f88ea977730e1cb3bad5041269a3d44b3f2a1569"
+    },
+    {
+      "path": "docs/02-美术交付清单.md",
+      "sha256": "9a6c3e5b2441cdea622f9f25fa64f11f8a4eac253db80c4f079ed62207be6b21"
+    },
+    {
+      "path": "docs/03-音频交付清单.md",
+      "sha256": "1c4c99d73402ad695157cc15f8351fd6e2cdc0f48cfb176f0d899b3a0405016d"
+    },
+    {
+      "path": "docs/06-占位美术替换Checklist.md",
+      "sha256": "85892ac3ad87b0e96e0d2864b511c09b2abcb8e7ed4861db0f90ad983c21bec5"
+    },
+    {
+      "path": "docs/17-主页音乐与制作名单.md",
+      "sha256": "773053a6062dc90e1bbe940d03adf8db437f18a4f2e6f419f62c5cda6e4e2c59"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/SceneTransition.cs",
+      "sha256": "4148ed0d6a00711da1795518cab74d6079813d673e514c91901ae899567e70f2"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/SceneTransition.cs.meta",
+      "sha256": "71b458baf1a6d705ab9617aa394bc033e076530ab9e0f8c8b9f20e60d16d60be"
+    },
+    {
+      "path": "Assets/Game/Editor/M2MenuAuthoring.cs",
+      "sha256": "7aab0145e87f3ab4a99aea825b786fb25aa6616fae9391b30e1787fd7bdbd499"
+    },
+    {
+      "path": "Assets/Game/Editor/ChapterFirstPassAuthoring.cs",
+      "sha256": "ab9e9c34d9685ec1609b268c36076246f55319644d84240773db6287092305d9"
+    },
+    {
+      "path": "Assets/Game/Editor/CiBuild.cs",
+      "sha256": "d64bdfdc70acb338c1d129f2e56f8be80c7299c8c286d20a2ebf3f1e7150a225"
+    },
+    {
+      "path": "Assets/Game/Editor/M2ReleaseAuthoring.cs",
+      "sha256": "3c90f16a82051b0aea21e193fc039a42eca10de86bf0daa8bcca595d56111962"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c4bd56629ea8b9351779abc761e4f7068f3552ff4a4a3310fe199f6d067e3a8c"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "dc4cce183fa74f247d6f2e016d045224252d0153eaee18e3191a41e90fc2fa28"
+    },
+    {
+      "path": "ProjectSettings/ProjectSettings.asset",
+      "sha256": "835da6cd3b395c8a75e87c57788071fa5b0c9321f1158e9fedc132740528b342",
+      "windows_sha256": "fab2622d3017bd1a04320a91ce1615b363cbfbc10cf29aeec6797947c6c8058c",
+      "sync_note": "Only productName changed in each copy; preserve pre-existing runInBackground: WSL=0, Windows=1."
+    }
+  ],
+  "validation": {
+    "editor": "Windows Unity 6000.0.84f1",
+    "device": "RTX 4060 Laptop / keyboard and mouse",
+    "resolutions": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "final_playmode_tests": {
+      "MainMenuPresentationTests": {
+        "passed": 3,
+        "total": 3,
+        "seconds": 12.83
+      },
+      "M2MenuFlowTests": {
+        "passed": 1,
+        "total": 1,
+        "seconds": 9.2
+      }
+    },
+    "runtime": "Actual UI raycast and pointer click; three flashes; black frame; source volume 0.42 -> 0; first scene reveals gradually; restored input moved x=1 -> 2.01; actual exit trigger loaded Chapter01_02; return-to-menu; muted transition",
+    "frames_1080p": [
+      1898,
+      2285
+    ],
+    "fade_in_intermediate_samples_1080p": 89,
+    "frames_muted_1280x800": [
+      54391,
+      54769
+    ],
+    "fade_in_intermediate_samples_muted": 112,
+    "grayscale": "Offline grayscale of actual 720p Game view screenshot",
+    "postprocessing": "Main-menu camera postprocessing disabled; overlay has no bloom dependency",
+    "evidence_local_windows": [
+      "Screenshots/MenuTransition20261111/",
+      "Assets/Screenshots/MenuTransition20261111/"
+    ],
+    "boundary": "UI and scene-flow verification. No full gameplay suite, standalone build, full playthrough or formal art/audio acceptance."
+  },
+  "restored": {
+    "playmode": "stopped",
+    "open_scene": "MainMenu, clean",
+    "playmode_start_scene": "MainMenu",
+    "game_view": "Free Aspect; two temporary sizes removed",
+    "auto_tick": true,
+    "auto_tick_interval_ms": 16,
+    "run_in_background": true,
+    "audio_listener_volume": 1,
+    "time_scale": 1
+  },
+  "sync": "Only task files, including Editor-authored MainMenu and new script .meta; no AGENTS, Library, Temp or test/screenshot outputs.",
+  "current_revision": "menu-title-20261111",
+  "title_amendment_validation": {
+    "revision": "menu-title-20261111",
+    "date": "2026-11-11",
+    "resolutions": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "frames": [
+      7243,
+      20323
+    ],
+    "checks": [
+      "Application.productName and persisted PlayerSettings productName = 希腊星",
+      "All visible menu Text objects belong to title or buttons; exactly five labels",
+      "All three title characters exist in retained font",
+      "Scene serialized object IDs preserved",
+      "Console ground truth: 0 runtime errors"
+    ],
+    "screenshots_windows_only": "Assets/Screenshots/MenuTransition20261111/title-{1080p,720p,1280x800}.png",
+    "automatic_tests_run": false,
+    "standalone_build_run": false,
+    "scope": "Copy/title and authoring defaults; earlier transition test results above remain historical."
+  }
+}

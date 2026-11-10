@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82812844eff13514691bfca6d4a71dce, type: 3}
+  m_Name: ChapterAudio
+  m_EditorClassIdentifier:
+  Stone: {fileID: 8300000, guid: 2a505da8d402e8146aec73193f525809, type: 3}
+  Lyre: {fileID: 8300000, guid: 599dda12434c53a43bd4d666549bf8bd, type: 3}
+  Drum: {fileID: 8300000, guid: 1eaa7eed8da60a94ba0565f0668e7e18, type: 3}
+  Ceramic: {fileID: 8300000, guid: 9687908a3c164d944b9164519b4be337, type: 3}
+  Launch: {fileID: 8300000, guid: af60fa048d982674cb70ebcff4b7df90, type: 3}
+  Embed: {fileID: 8300000, guid: 24d00473587a22f47b9f5ca592bfc2ca, type: 3}

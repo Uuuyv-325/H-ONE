@@ -1,0 +1,2397 @@
+{
+  "revision": "chapter-first-pass-20261110",
+  "date": "2026-11-10",
+  "kind": "Chapter 1 first-pass authored levels, procedural nontext teaching, progressive uGUI and synthesized sample cues; no final art acceptance",
+  "base_commit": "945bd4fba71c746d6c8cbb47e4036c74d0ff6b65",
+  "scope": "Uncommitted task files only; old Core/ShadowSlice/Northline and unrelated Windows dirty work preserved.",
+  "record": "docs/15-首章关卡第一版.md",
+  "ledger": "docs/06-占位美术替换Checklist.md §12",
+  "source_policy": {
+    "readme": "../H-ONE-arts/README.md",
+    "sha256": "a1aa5962e74a380f08451f486a7c4b6594ecdcbc989de992df62ff420f061999",
+    "snapshot": "# About\n\n仅作原始美术素材存储的临时目录, 作只读查询即可.\n\n# To AI 声明:\n\n可以对这些美术素材做什么: 对这些素材进行只读查看, 适当裁切或者调整格局以适应程序要求. 可以将这些图片复制到项目主目录并适当重命名.\n\n**绝对不可以**对这些美术素材做什么: 以这些图片为原型直接调用 AI 生图工具生成新图片, 或是将这些素材作为 AI 的训练数据集.\n\n# 美术素材说明\n\n`bg-level1` 是第一大关的背景图片, `fg-level1-grass` 则是单独的草的前景.\n\n`rock-dark` 和 `rock-light` 是两种不同点亮状态的岩石, 具体应用内容应结合具体玩法和策划案.\n\n`main-menu` 是游戏的暂停页面, 其并非一个完整屏幕, 应当以叠加在暂停后游戏画面的方式嵌入, 并对游戏本身背景做适量虚化.\n\n`IMG_6053`, `IMG_6054`, `IMG_6055` 是 `main-menu` 的差分, 石柱上的星星有不同点亮状态, 应该对应游戏内关卡进程, 具体使用方式仍要结合具体玩法和策划案.\n\n`spawn-point` 为重生点素材; 点亮素材暂缺失, 具体是否需要这一素材仍要结合具体策划案.\n\n`sprite_01` 为人物变身星星形态的 sprite 图, 由于并非严格对齐, 嵌入程序前仍需要自行调整. `turn_star` 为该动作的动图版本, 可以逐帧提取以供使用 (辅助或代之使用).\n\n`sprite_02` 为星星形态的动画, 压力板动画和收集物的 sprite 图. 使用前仍需自行调整, 不存在对应的动图版本.\n\n`sprite_03` 为人物行走动画, `walking` 为其动图版本. 具体使用说明和 `sprite_01`, `turn_star` 相同.\n\n`title-screen` 为标题界面. 左侧为主要图片, 右侧 UI 待绘制.\n\n`jump` 为人物跳跃期间的过渡帧.",
+    "application": "Source remains read-only. No new source image copies, crop edits, AI generation or training in this task. Existing Delivery01/02 are reused through prefabs and their original Sprite GUID/fileIDs.",
+    "historical_delivery01_policy": "Retained historical manifest snapshot; not substituted for the current README policy."
+  },
+  "provenance": {
+    "procedural": "Project-authored C# geometry, teaching paths and synthesized 48 kHz mono PCM. Editable sources are files[]; geometry has no raster canvas, PPU, pivot or Sprite fileID.",
+    "reused": [
+      {
+        "path": "Assets/Game/Art/Delivery01/manifest.json",
+        "sha256": "feca87fc4601bbf0bec4546b480a4eb7abf31a5b439cc1f728cf07908d7d7492"
+      },
+      {
+        "path": "Assets/Game/Art/Delivery01/SOURCE_USAGE.md",
+        "sha256": "3deee901f8c42f7f17b55b7473d14a95ef3cc55765bf85595983dd50718f2ecc"
+      },
+      {
+        "path": "Assets/Game/Art/Delivery02/manifest.json",
+        "sha256": "50f247389573e7a9a659fec6b22e3de3d30f7644bb9eaaff2c430d7d14340c46"
+      },
+      {
+        "path": "Assets/Game/Art/Delivery02/SOURCE_USAGE.md",
+        "sha256": "a1aa5962e74a380f08451f486a7c4b6594ecdcbc989de992df62ff420f061999"
+      },
+      {
+        "path": "Assets/Game/Art/Fonts/manifest.json",
+        "sha256": "c9d4e954c8f174a992b6e334349f6d5395707fbbeb6e47c67d044b504206d475"
+      },
+      {
+        "path": "Assets/Game/Art/P0/README.md",
+        "sha256": "45ae8ed5f4f4a76184545d0b8c7c7c64f40b96f9fd38c6ab03bea5b3a9a00ed7"
+      },
+      {
+        "path": "Assets/Game/Audio/P0/README.md",
+        "sha256": "b72cc4572958c45bc0780bd3ffede3282c660acaad47b250a517f11b56f7197d"
+      },
+      {
+        "path": "Assets/Game/Art/Fonts/README.md",
+        "sha256": "f222dd144104e34bfb1870dd85eb5e22addf27ec02ef1a3adf783fe1f668281f"
+      },
+      {
+        "path": "Assets/Game/Art/Fonts/LICENSE.txt",
+        "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+      }
+    ],
+    "missing": "Final hand-painted murals/keycaps, flute/switch/door states, layered art sources, formal audio masters and complete separate license/attribution deliveries remain outstanding as recorded in the ledger."
+  },
+  "art_uses": [
+    {
+      "ids": "ART-001–005/007–021; NEW-002/003/003-a",
+      "batch": "P1/P2",
+      "use": "Chapter01_01/02 Actors/ChapterPlayer, Collectibles, Checkpoints, Geometry, Background and Mechanisms; existing Delivery01/02/P0 prefabs and procedural feedback",
+      "source": "Existing delivery manifests/SOURCE_USAGE; P0 README",
+      "status": "Reused integration; final parent acceptance remains unchecked"
+    },
+    {
+      "ids": "ART-022; NEW-007",
+      "batch": "P1/P2; CH-12 TUT-01–08 UI-01/04/05",
+      "use": "Tutorial/ChapterTutorial/MosaicAndDemonstration; Presentation/ProgressiveGlyphs/CurrentAction; Actors/ChapterPlayer/ProceduralFeedback/GameplayFeedbackHUD",
+      "source": "ChapterTutorial.cs, GameplayFeedbackView.cs, ChapterFirstPassAuthoring.cs",
+      "status": "Procedural first pass integrated; final murals/keycaps/replay icon/new-player assessment missing"
+    },
+    {
+      "ids": "NEW-004",
+      "batch": "P2; ME-06/07 FX-12",
+      "use": "Chapter01_02 Mechanisms/E_Flute/UpperPipe, LowerPipe, FluteLift; ChapterMechanismView/SwitchAndFluteSymbols",
+      "source": "FlutePort.cs, PanFluteLift.cs, ChapterMechanismView.cs; existing P0/stone.png sprite at original fileID",
+      "status": "Procedural first pass integrated; final pipe/platform/endpoint art missing"
+    },
+    {
+      "ids": "NEW-005",
+      "batch": "P2; ME-12/16",
+      "use": "Chapter01_02 Mechanisms/D_Lyre/l2-s1, E_Flute/l2-s2 and InlaidCircuit",
+      "source": "StarSwitch.cs, ChapterMechanismView.cs, ChapterCircuitView.cs",
+      "status": "Procedural first pass integrated; final independent switch/receiver art missing"
+    },
+    {
+      "ids": "NEW-006; ART-006",
+      "batch": "P1/P2; ME-15 UI-01/08 FX-13",
+      "use": "Both Mechanisms/ConstellationDoor and ProgressNodes/ConstellationNodes; ChapterExit",
+      "source": "ChapterGoalView.cs, ChapterExit.cs; existing P0/stone.png",
+      "status": "Procedural first pass integrated; final constellation/gate/open/completion states missing"
+    },
+    {
+      "ids": "ART-023; NEW-010",
+      "batch": "P1/P2; UI-06–10",
+      "use": "MainMenu chapter start; chapter PauseCanvas and ChapterCompletion; room cameras",
+      "source": "Existing Delivery01/Fonts; ChapterCompletionView.cs, ChapterCameraLayout.cs, ChapterCamera2D.cs",
+      "status": "First-pass flow integrated; final menu/transition art/audio missing"
+    }
+  ],
+  "import_contract": {
+    "new_assets": "Scene/config/C# .meta files generated/preserved through Windows Editor; recorded in files[].",
+    "retained_assets": "No PNG, texture import meta, Sprite rect/canvas/PPU/pivot/anchors/9-slice or retained sub-Sprite fileID modified; no mass Prefab regeneration.",
+    "new_layout": "New scene transforms, collision roots, IDs/checkpoints and camera frames authored for the layout in doc15. ChapterPlayerTuning has independent 8-unit range.",
+    "authoring_defaults": "New-only ChapterFirstPassAuthoring uses existing prefabs. CoreSceneAuthoring/LevelPieceFactory/M2SceneAuthoring and runtime catalog retain their previous defaults; new chapter scenes omit RuntimeLevelEditor because dedicated mechanisms lack its JSON schema."
+  },
+  "files": [
+    {
+      "path": ".github/unity-build-scenes.txt",
+      "sha256": "30e6490bb9756052e2b66b268ba3c8958a1f0ea96195ae8ade85b1892de5d26e"
+    },
+    {
+      "path": "Assets/Game/Editor/M2ReleaseAuthoring.cs",
+      "sha256": "4e2bf0d9472d34e1483f6dd8d8df00e0f69a54989bcb45791ac4ccd1fc112822"
+    },
+    {
+      "path": "Assets/Game/Editor/M2ReleaseAuthoring.cs.meta",
+      "sha256": "d2e1958cd2d678f67805a3aab6ec73acb6c713d2b1bf5f3f3ba59f3a16357750"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelDefinition.cs",
+      "sha256": "53aa091b0a0f6e6324c0579357f45e1f27f24cfe002da8a86525a6848a73a3e6"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelDefinition.cs.meta",
+      "sha256": "9589ce593af98d96d09815b6f0e28d79195c17d2ad2da1ca1de578d26a089044"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelSession.cs",
+      "sha256": "1df4e3053991908eeef0c81a9f1071aedd328b6090f3a8208f686cc73a24de6f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelSession.cs.meta",
+      "sha256": "6de56e99dca04664cb144e879c324bcd8a09962f4272b39560d6c53415720843"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/StarInstrument.cs",
+      "sha256": "577dbd5460e128aa1176b9f771ff085db285a6fedaaabfb639e6293cb61cbc17"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/StarInstrument.cs.meta",
+      "sha256": "798435ac0bd05a6156b98ec4b8728898883fa9d69edf218beee20c4722095277"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCamera2D.cs",
+      "sha256": "749e9278e688c6fd5b76dc08a3f97e342f938b803ceed4154067f299e7b2e997"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCamera2D.cs.meta",
+      "sha256": "a66d03982a585cf1aa5dc097fc2f7cd8a42a0f717973937b4a66fd286ed1d681"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameFlow.cs",
+      "sha256": "97d2e97235e11315021d1078566ad70c770f4ed625672acef26b8d3daf8465a4"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameFlow.cs.meta",
+      "sha256": "2aec854b9629ba7db8fa9ea4ca9a439c25e8dd6c324dbd9112613c4c7359f9d3"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameplayFeedbackView.cs",
+      "sha256": "d098b28709ec41ffc06522612747fdebe388e27833ad957e69af295468c636ca"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameplayFeedbackView.cs.meta",
+      "sha256": "43e3bf667dab58bb7dcfd57a227e02f4a9558e4af0502555adeb1012724b548a"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/MainMenuController.cs",
+      "sha256": "a61cee21f74b73d3ef29460ca9123cb8aa78d97395677a5aa0fe3e76dac7d415"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/MainMenuController.cs.meta",
+      "sha256": "908d12a14aee8cb0767d3b5310d44ee149c6def00f49ee281c2743b7c8ebf67f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarFlightMotor2D.cs",
+      "sha256": "8be4862aa279cdc95468abbff4f1272f6974a024e3df8ec3a737a1b7d2c9aaa8"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarFlightMotor2D.cs.meta",
+      "sha256": "e9fc05cf139d51c765a7b9c40d7c6f436d62ed44aa80026a3ac74493386d94e1"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarPathSolver.cs",
+      "sha256": "69813e1ce9699d1ee3dced62351ad9470b29b69b7591c206726997246bebc992"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarPathSolver.cs.meta",
+      "sha256": "662402251579332692a383c923c968572d239de5d1dcf65e2045869dc1b08545"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/M2MenuFlowTests.cs",
+      "sha256": "523f260b1302a1ee631c54619b8e2c4cc978ac927a4a799aa356162dab283c96"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/M2MenuFlowTests.cs.meta",
+      "sha256": "4b6955df04b303bf5ecaa2dc0a88be245a2ebe05977e0d492f508b799a7200a6"
+    },
+    {
+      "path": "Assets/Game/Editor/ChapterFirstPassAuthoring.cs",
+      "sha256": "8c714dac3dc57e22748bab89c0ca63f142e1bcb0cc63f29c1815ca555bb03aa4"
+    },
+    {
+      "path": "Assets/Game/Editor/ChapterFirstPassAuthoring.cs.meta",
+      "sha256": "a7383395164eef7e2f7dc45bbc10c75e75fca616fac4289886659f9bbbca2883"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/ChapterExit.cs",
+      "sha256": "74a38779d9905773579981f3ce42ab47181f8751ca3b65c0ae39c8156c049320"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/ChapterExit.cs.meta",
+      "sha256": "65c34f533ef33b8602304b0b95e2ae3e4e68b540ef413fdac4c510c33c42c4ad"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/StarSwitch.cs",
+      "sha256": "d3e13fdf99a97324355a8f12fd7e9354aef6996faa85f27233334175933e63ba"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/StarSwitch.cs.meta",
+      "sha256": "f40dc628d44f475d61041d39a2470c2fa8cd2a72887c8f0449d2a18ce69cac49"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/PanFluteLift.cs",
+      "sha256": "839a7738bf371e2d15600a6e1671142cd174b2a34f306eb3374daaea01069aac"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/PanFluteLift.cs.meta",
+      "sha256": "a8c37b6118eaae0c1a9b41cbc8a0b67c5bea270eea30863b8d58c2c5641f58ce"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/FlutePort.cs",
+      "sha256": "861ecfda91b3117ad6f75f7ff3900c0bcc3764441d21b060940626e8f797a6b4"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/FlutePort.cs.meta",
+      "sha256": "3d9a54eeabec26964c2177650909bc50562606fa0cf4f3d87af68cd5d4c15aa9"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/ProgressCondition.cs",
+      "sha256": "97570ca3f58cc5f3009b8936ef23fe372ac86761cb5b2d4088ea65bdd20c1417"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/ProgressCondition.cs.meta",
+      "sha256": "bb6ba15385213dcd1515fb896b35fd6aacdb43e87a6f60260496f96d5fa3fc6b"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterGoalView.cs",
+      "sha256": "17441c79743d02f3cc322005c381be5abbda0a17ca334961f124135b5453edc3"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterGoalView.cs.meta",
+      "sha256": "aaddfc16c09c27fefc8edc2960d39fca1cbfa654f67ecf8e7ed008220ae8ff0e"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCompletionView.cs",
+      "sha256": "52e478ef1189fc9c3df825ae856099f68bdc39aec8a1a940b17b605dd92d1e2b"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCompletionView.cs.meta",
+      "sha256": "e3ed8b25328fad668f9c8da0f0963b002e28b5c90ba250f20b0cb470ac0c7aee"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCameraLayout.cs",
+      "sha256": "2c32540fe09a04c626db1809ec73f023e6deb7958ca343f916d81b37865d1eb1"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCameraLayout.cs.meta",
+      "sha256": "3f78366bdf8a2b1f59afa04f61a4f0380e452878a364f15d60db1f9ad90174a3"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterMechanismView.cs",
+      "sha256": "6cccfd432a5ccf9ee2a9d1810324b3e409228a2815582f8135899ce49e38da3d"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterMechanismView.cs.meta",
+      "sha256": "a7b59a13ddfe0cd3d511d8ce98bd95e2b23ab99cb6adf2fb264ac5bc805c5fcb"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterTutorial.cs",
+      "sha256": "06e508a44ad463dc3116470a6ab35e2cc373db9740d47bf34651b081b8ee6fc5"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterTutorial.cs.meta",
+      "sha256": "67666c80c53d210f38d6793d1dc5bb087aa161c63d3f35c595419bd2df5f2db6"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/ChapterFirstPassTests.cs",
+      "sha256": "2d907927c12486043ea3db680c367291be5d89e20cbbd24e6bd9adfbc70a89ae"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/ChapterFirstPassTests.cs.meta",
+      "sha256": "5d16013fd063d757c514950020d1e9d9948d2aefa532e645c76357c66a4370bc"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCircuitView.cs",
+      "sha256": "6f3295c0f71000c4d36f1544ff208d8798f445c5b4a34c76a506d8294d5eea62"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCircuitView.cs.meta",
+      "sha256": "07108c402772776198cc26c52b8a0952880012e7dc031c924c1df1590410453f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Player/PlayerStateMachine.cs",
+      "sha256": "0c4fe20e7be38ed303c6d2fa4f342596c24308ce74d604b51bab0ae86e55ba79"
+    },
+    {
+      "path": "Assets/Game/Runtime/Player/PlayerStateMachine.cs.meta",
+      "sha256": "21f49b6ec67cd2acc9437ab9fc9695a7bca370a445a985c7a36e8bc00b71287e"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PuzzlePauseMenu.cs",
+      "sha256": "a321cd081cdbd38ccaa3d8ac4d0e0b98680bc44c91584da2f8d921a3518c21ef"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PuzzlePauseMenu.cs.meta",
+      "sha256": "3d291552f3db253275f1b14155a99fa3869ea5c1b4e53dd7d4335b8553e9865d"
+    },
+    {
+      "path": "Assets/Game/Scenes/MainMenu.unity",
+      "sha256": "1cde0daea936540ddcc497a0bb3918d98d3280421983b3075ade482201466a8c"
+    },
+    {
+      "path": "Assets/Game/Scenes/MainMenu.unity.meta",
+      "sha256": "1407afc4f85ba5fbcf328709ea6dc02136e01023f6cd4fcdf86397824f29a17b"
+    },
+    {
+      "path": "Assets/Game/Scenes/Chapter01_01.unity",
+      "sha256": "8c010f86033b915ae0e66a4d1308ef45d6bc00217a1389e2c96f58350b0f6f77"
+    },
+    {
+      "path": "Assets/Game/Scenes/Chapter01_01.unity.meta",
+      "sha256": "0753c2a3094f484c673c1a6335c540a0d69629c94ea8048e7ab1e668d9b03bb0"
+    },
+    {
+      "path": "Assets/Game/Scenes/Chapter01_02.unity",
+      "sha256": "893726704e9b1d45a58d658024a1d39cefbdd025746bba6f54ce537938edd1bb"
+    },
+    {
+      "path": "Assets/Game/Scenes/Chapter01_02.unity.meta",
+      "sha256": "adea133371be757251727e419e8baf90c05f55a09e091d7cf4ec7bb06a22b541"
+    },
+    {
+      "path": "Assets/Game/Data/Levels/Chapter01_01.asset",
+      "sha256": "9e00fd802178e5495453cec185de133c470db23ed09a7b1252737ce9ed67429a"
+    },
+    {
+      "path": "Assets/Game/Data/Levels/Chapter01_01.asset.meta",
+      "sha256": "7e2f0530a9edcba60a570b7fea3700a21e045bd8553c76b65903aef23d9aa402"
+    },
+    {
+      "path": "Assets/Game/Data/Levels/Chapter01_02.asset",
+      "sha256": "0dbfad43cade76daf2ef50419dee795924aa3003be18c995fb143b861ebeed4a"
+    },
+    {
+      "path": "Assets/Game/Data/Levels/Chapter01_02.asset.meta",
+      "sha256": "f1244dd5a22491c623fa011d2a80363041d3f3cb92e9d28224416616483bfdde"
+    },
+    {
+      "path": "Assets/Game/Data/Player/ChapterPlayerTuning.asset",
+      "sha256": "3969216275b1b1710a1fa11223f33c8a1dd3c49157c5b7279e851a6a86303019"
+    },
+    {
+      "path": "Assets/Game/Data/Player/ChapterPlayerTuning.asset.meta",
+      "sha256": "90c2180f013e41a2d9ee1338a03b3af8f9ee73026d04e1e2c1162ad30ac50a84"
+    },
+    {
+      "path": "ProjectSettings/EditorBuildSettings.asset",
+      "sha256": "7e1d1b9e66f356eb6c36af9ee951f1eafb2e8cb52c6b2c8513e73a07a804d288"
+    }
+  ],
+  "verification": {
+    "date": "2026-11-10 to 2026-11-11 Asia/Shanghai",
+    "editor": "Windows Unity 6000.0.84f1; Windows 11 10.0.26200; NVIDIA GeForce RTX 4060 Laptop GPU",
+    "tests": {
+      "editmode": {
+        "passed": 29,
+        "total": 29,
+        "duration_seconds": 4.01
+      },
+      "playmode": {
+        "passed": 39,
+        "total": 39,
+        "duration_seconds": 150.52
+      }
+    },
+    "actual_input": "Four new PlayMode tests: L1 three fragments and progressive UI/reset; L2 stone/bridge/drum/lyre/flute/three fragments/two switches/exit; lift rider/pause/reset; right-bank bridge recall/rebuild. Lift/rider and right-bank setups use explicit poses as described in the record.",
+    "frame_evidence": [
+      [
+        13110,
+        13135
+      ],
+      [
+        9497,
+        9520
+      ]
+    ],
+    "actual_game_view_sizes": [
+      [
+        1280,
+        720
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "visual_scope": "Local-state setups separate from actual Input Actions route. Initial only movement; reflection/shadow/recall progression; drum circuit; flute lower/raised, muted and derived grayscale; repaired completion menu. No URP AdditionalCameraData on chapter camera, so no camera postprocessing enabled.",
+    "flow": "L1 exit to clean L2. Repaired completion Replay/Title raycast first-hit plus pointer-click dispatch; Replay to zero-progress L1 with new hints hidden; Title to timeScale=1, no players, one EventSystem and one AudioListener.",
+    "evidence_directory_windows": "Screenshots/M345/",
+    "local_reports_directory_windows": "artifacts/chapter-first-pass-20261110/",
+    "build": {
+      "buildId": "build_473185235982",
+      "result": "Succeeded",
+      "platform": "StandaloneWindows64",
+      "outputPath": "D:/Files Library/5111-Unity Hub/H-ONE/Builds/Chapter01FirstPass/H-ONE.exe",
+      "totalSizeBytes": 297502243,
+      "buildTimeMs": 55764,
+      "totalWarnings": 186,
+      "totalErrors": 0,
+      "scope": "Ordinary player build. Existing package warnings retained; not launched for an independent full two-level playthrough."
+    },
+    "not_accepted": [
+      "First-time no-explanation human playtest and 3–5 minutes per level",
+      "Final P0/P1/P2 art/audio and complete states",
+      "Independent Windows Player full two-level playthrough",
+      "Device/performance acceptance and full-level grayscale/muted run"
+    ],
+    "final_console": {
+      "sampledUtc": "2026-11-10T16:07:52.1486749Z",
+      "ageMs": 233,
+      "compilationFailed": false,
+      "compiling": false,
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "consoleLogs": 0,
+      "seeded": true
+    },
+    "restore": {
+      "playMode": "stopped",
+      "openScene": "MainMenu (clean)",
+      "playModeStartScene": "MainMenu",
+      "gameView": "Original index 0 Free Aspect, temporary custom size removed",
+      "autoTick": "Original enabled/16ms retained",
+      "runInBackground": "Temporary override removed; original project true",
+      "audioListenerVolume": 1,
+      "copyEqualityFiles": 66
+    },
+    "screenshots": [
+      {
+        "path": "Screenshots/M345/l1-reflection-1080.png",
+        "sha256": "d1e7eef9bd603b1b85f117a6a7015132f9caedc56a578888732290db9f2b8974",
+        "kind": "local-state/debug evidence; rescaled Free Aspect, not adaptation proof"
+      },
+      {
+        "path": "Screenshots/M345/l1-shadow-720.png",
+        "sha256": "bf05ca50beb6e9de9997c2b9457a302e2ec8642aa0c58c3fb0f85d2147cf7661",
+        "kind": "local-state/debug evidence; rescaled Free Aspect, not adaptation proof"
+      },
+      {
+        "path": "Screenshots/M345/l1-shadow-used-800.png",
+        "sha256": "59cd5f3296700c57d9ae512d351ae7f3eeef6881d0b8ab194054f2d462a8f7a6",
+        "kind": "local-state/debug evidence; rescaled Free Aspect, not adaptation proof"
+      },
+      {
+        "path": "Screenshots/M345/l1-start-720.png",
+        "sha256": "77c80c96f5dd8958cf9f4ed81fa6e7c5fa08243f06552ff3ae8d80bd22960c2c",
+        "kind": "local-state/debug evidence; rescaled Free Aspect, not adaptation proof"
+      },
+      {
+        "path": "Screenshots/M345/l1-start-actual1080.png",
+        "sha256": "a88240f0b96f22e09cb6fe444e904d808fe5930725220a407dbd674bb7ccf2d5",
+        "kind": "fixed-resolution evidence"
+      },
+      {
+        "path": "Screenshots/M345/l2-completion-actual1080.png",
+        "sha256": "ab79f4adb7758e32e078503171f09223657dc618607f1b2f5b0dc77d6ce89121",
+        "kind": "pre-fix failure evidence"
+      },
+      {
+        "path": "Screenshots/M345/l2-completion-fixed-actual1080.png",
+        "sha256": "feec7b14a2a7f7572ca57c254e3f25396079f2645fa89f39528f5e95b99fe9a8",
+        "kind": "fixed-resolution evidence"
+      },
+      {
+        "path": "Screenshots/M345/l2-drum-actual720.png",
+        "sha256": "e63b84bc6d6a4e679aa785b2f6000ce4fb3c85e3cf15ce3ee6d6a39f4e06d2a4",
+        "kind": "fixed-resolution evidence"
+      },
+      {
+        "path": "Screenshots/M345/l2-flute-actual800-muted-nopost.png",
+        "sha256": "c8bc677adca02b56fe5e0cae32735ef9a4443f3cde17fbe17dad263ee7e65fa0",
+        "kind": "fixed-resolution evidence"
+      },
+      {
+        "path": "Screenshots/M345/l2-flute-raised-actual800-gray.png",
+        "sha256": "139e89207eebb7b33919c36d34115f17867b7f5e08b5d57e89545f727ba50538",
+        "kind": "fixed-resolution evidence"
+      },
+      {
+        "path": "Screenshots/M345/l2-flute-raised-actual800-muted-nopost.png",
+        "sha256": "e55f070bd53fde6e1474e73c44fb55302745d7767dc22175cf90f2e91a5b181b",
+        "kind": "fixed-resolution evidence"
+      },
+      {
+        "path": "Screenshots/M345/regression-current.png",
+        "sha256": "48d65b7d034f18c07207ad52cef7f1dc4efe19f448208bdb3baec90ae2dcbc2d",
+        "kind": "local-state/debug evidence; rescaled Free Aspect, not adaptation proof"
+      }
+    ],
+    "tooling_notes": "Transient Pipeline disconnects during Play Mode domain reload; one final read-only eval timed out after 30 s. Subsequent CLI status and Editor status independently confirmed ready, stopped, not compiling. The timed-out read-only query is not additional runtime acceptance evidence.",
+    "packaging_preparation": "Normalized empty Unity YAML/meta field trailing spaces in task assets before commit; GUID/fileID/serialized values unchanged. Both-copy equality retained."
+  },
+  "reused_scene_dependencies": [
+    {
+      "path": "Assets/Game/Art/Fonts/MenuSans.ttf",
+      "sha256": "74db7976794ecced817c500c1d73a546c736edf2c40fe75a9202e416612643ec",
+      "meta_sha256": "7529a7935a27213854488188ec7dca61f6e4ea0bd6439fd86064451ca3af9771"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab",
+      "sha256": "85c01f42e435b655a053b07df28e6888655b2c118a2d8adbaf0464ea3306cd45",
+      "meta_sha256": "71659a0f48f6caee65ad5235d98a49e2f011a88b778d43b9b45ae9737eec692e"
+    },
+    {
+      "path": "Assets/Game/Data/Player/ChapterPlayerTuning.asset",
+      "sha256": "3969216275b1b1710a1fa11223f33c8a1dd3c49157c5b7279e851a6a86303019",
+      "meta_sha256": "90c2180f013e41a2d9ee1338a03b3af8f9ee73026d04e1e2c1162ad30ac50a84"
+    },
+    {
+      "path": "Assets/Game/Runtime/Player/PlayerStateMachine.cs",
+      "sha256": "0c4fe20e7be38ed303c6d2fa4f342596c24308ce74d604b51bab0ae86e55ba79",
+      "meta_sha256": "21f49b6ec67cd2acc9437ab9fc9695a7bca370a445a985c7a36e8bc00b71287e"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab",
+      "sha256": "74a84290003e6b8bc4dc35d0cea28a14fd3312f6340910b86d868a50fea8ab90",
+      "meta_sha256": "3849b57dd7bf1516c0e91657ae5fdfbdbf4ee78bee5363e302c1b14bafc24f31"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelPieceMetadata.cs",
+      "sha256": "3458b0e4f9001e2d2aae81752a1b88414efc58748e501dfc456a6bff4b9da4ab",
+      "meta_sha256": "8713180afb40203c8e4b5c8578e4c49751ea9579c1142ea4fe132b05e22afcbc"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/ProgressCondition.cs",
+      "sha256": "97570ca3f58cc5f3009b8936ef23fe372ac86761cb5b2d4088ea65bdd20c1417",
+      "meta_sha256": "bb6ba15385213dcd1515fb896b35fd6aacdb43e87a6f60260496f96d5fa3fc6b"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab",
+      "sha256": "e10ab8017cc77087368a1e6a74895bdd64f255d9912e47b7e37648e87e84ce91",
+      "meta_sha256": "c88f0e132ebfaac9f63cfeaac3f4fa8af6ca9bec087c6f939700be105fc5e2a1"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCamera2D.cs",
+      "sha256": "749e9278e688c6fd5b76dc08a3f97e342f938b803ceed4154067f299e7b2e997",
+      "meta_sha256": "a66d03982a585cf1aa5dc097fc2f7cd8a42a0f717973937b4a66fd286ed1d681"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab",
+      "sha256": "e90b56721d8afc20f230f869e0d801c0e9515695ad2125d11d1170d95ac8c3d0",
+      "meta_sha256": "38adedec60552a33c0b38c4dec28d56e15b7fddb94bd43ca02a610f500b1f5d9"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterGoalView.cs",
+      "sha256": "17441c79743d02f3cc322005c381be5abbda0a17ca334961f124135b5453edc3",
+      "meta_sha256": "aaddfc16c09c27fefc8edc2960d39fca1cbfa654f67ecf8e7ed008220ae8ff0e"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/CameraBackdrop.cs",
+      "sha256": "266c324463a82d4094195ebb5f24e07fba7c36e326d6800daf7a97fd168f7a85",
+      "meta_sha256": "20d73addea22e60faeb26cf0b3e569f1f8593bcc8adf280e517db35d775f9e0b"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab",
+      "sha256": "c251fd89a6024b2b8c1ccb5a8ef2f8f415d7b1246acdad4d79021ab6d3016949",
+      "meta_sha256": "79e232da147130250c98e3a5809c78a8c0b1ced5a7ecdd2a9060bea173750cf2"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterTutorial.cs",
+      "sha256": "06e508a44ad463dc3116470a6ab35e2cc373db9740d47bf34651b081b8ee6fc5",
+      "meta_sha256": "67666c80c53d210f38d6793d1dc5bb087aa161c63d3f35c595419bd2df5f2db6"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/TrajectoryPreview.cs",
+      "sha256": "299bfcf21693b03355c5dce2ade267da17911718c4d5d8173a65f514e9190505",
+      "meta_sha256": "997096914cf5b381e6d49b66effd0e97f76a8fb12bc68f7ea9e592286bd38dd2"
+    },
+    {
+      "path": "Assets/Game/Art/P0/Trajectory.mat",
+      "sha256": "8f41cd6c240883852c207cde75e892354f866a42bd29f93e0fc7b059ab61a9e6",
+      "meta_sha256": "82b934a3f25ad86b69b79960df6ef211bc7b2f17abf7c232c4278073faa6fd34"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/Checkpoint.cs",
+      "sha256": "44c7fd289ab9a09e42d3b141125fd0247a6519dd9438a92844868fb78360adf9",
+      "meta_sha256": "c020790ad6017e9c44ae3542b4a6622c0445745dd3bb77fb4587a9b3d7bd8cf3"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PauseArtwork.cs",
+      "sha256": "f1b0e8e2dddee4ffd92009ab5862fa782ca5f274b90f8b3445f37b49ed72e46b",
+      "meta_sha256": "68a1abaae45367bc2e9fb2de1e00db7b2121a32edb1812bdd669cd8eaafafe38"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/ChapterArt.asset",
+      "sha256": "d5eeda2eb20d2325d37367124767ae7b8db31e3a733dcf08bdc86940a40f8b26",
+      "meta_sha256": "88031c525a39526c2fe70980a5f1a12cd662f6abc38dbd66fa732a6d59edcda3"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PuzzlePauseMenu.cs",
+      "sha256": "a321cd081cdbd38ccaa3d8ac4d0e0b98680bc44c91584da2f8d921a3518c21ef",
+      "meta_sha256": "3d291552f3db253275f1b14155a99fa3869ea5c1b4e53dd7d4335b8553e9865d"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/MenuAudioSettings.cs",
+      "sha256": "7755b789c09c6ea7c4d70c2744b4b74b3ec7d86c57c22f98586b764d18f9b5f0",
+      "meta_sha256": "b9d648f769c8d4ce9816339e6f003f229da123bb1d556d0a1bdf771b56837c34"
+    },
+    {
+      "path": "Assets/Game/Audio/Mixers/Core.mixer",
+      "sha256": "03791d5722e126a16c57ab20e6043a07ae4769aed295039559e028d181ffa637",
+      "meta_sha256": "c86e2517d5fe3c1098a4794738f14ef8e2f2e869bb894b5addad43ecfbf0bf49"
+    },
+    {
+      "path": "Assets/Game/Art/P0/ring.png",
+      "sha256": "010a45926d3f90c286a1f5e58bb29a7b6608ad5e43ec0eead69e32b880d07c13",
+      "meta_sha256": "15aac42ab1a045e7e14b16a6f379739b4d480d99d8596272919cee75b8175e78"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/ChapterExit.cs",
+      "sha256": "74a38779d9905773579981f3ce42ab47181f8751ca3b65c0ae39c8156c049320",
+      "meta_sha256": "65c34f533ef33b8602304b0b95e2ae3e4e68b540ef413fdac4c510c33c42c4ad"
+    },
+    {
+      "path": "Assets/Game/Data/Player/CoreFrictionless.physicsMaterial2D",
+      "sha256": "b2e1854b4f17d088dfb012f31892872b821f9f5abb528d966e9796a5d0de765e",
+      "meta_sha256": "818ed81674dbf493e13f7cbd615f483ea7689e80574c3e74936f530151504030"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/PlatformSocket.prefab",
+      "sha256": "df42e1e592d016b8235bb025d4d43ff0d1487766a2547bcc17213bb9d4ae1482",
+      "meta_sha256": "d310bd0a9d2beee042828053e6f49a67a97984befd6774c098f4347a5c63336f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ShadowFeedback.cs",
+      "sha256": "38eb1063943a5b228b17d89bab6057f7746d562f8f53c6f12fb4341d63595ab9",
+      "meta_sha256": "d94d30d6b1a77604c256b2092cb8b17a08ffefa78037577e4805374e17932fb4"
+    },
+    {
+      "path": "Assets/Game/Audio/P0/p0_collect.wav",
+      "sha256": "61bdce554b09714d1a78aa6e94403a5d4764dc1074c509b2676f4481172182bc",
+      "meta_sha256": "4fe3450f05b35d1d04b1f0563d10746d2aab9ac0f4465031a1c97305d34e7537"
+    },
+    {
+      "path": "Assets/Game/Audio/P0/p0_charge_start.wav",
+      "sha256": "600564e90aaeb1bf018101fd671c3355acca0c7b510e21ba88ed34a32e5ed5bc",
+      "meta_sha256": "ac0b57fdf88cc9a3d1400819e0a43eb303b5c4a22c85eb6b58070e4d0b3b92ad"
+    },
+    {
+      "path": "Assets/Game/Audio/P0/p0_reform.wav",
+      "sha256": "fd5e6f158a457a0fbddd5eb683b6e200ecd2dee2feec7b0d66be84a4aee558ca",
+      "meta_sha256": "f05468d54701329daf406624bec9ea81f979b22fa6154fb862802da58be1be05"
+    },
+    {
+      "path": "Assets/Game/Runtime/Audio/CoreAudioFeedback.cs",
+      "sha256": "2bbde1f093b3d30cdfdec459ecc6bdfe4e144082aae4cae61cda5ef10be47231",
+      "meta_sha256": "6d4d8a89d5036a196fe92d94dc2e6d257dbd549d8130bcd966cad356dfc1f406"
+    },
+    {
+      "path": "Assets/Game/Audio/P0/p0_charge_loop.wav",
+      "sha256": "888ccdd949ad7ba17e1ff9d8da010fa39092e03d8c2b3bbdbf6628a6fc6b4d84",
+      "meta_sha256": "80736f69e214f162dbbe659f8d536a376fce540a75e21ff955df4cbfb91aab3c"
+    },
+    {
+      "path": "Assets/Game/Audio/P0/p0_launch.wav",
+      "sha256": "b90fc8ac7fe0233db70c48a8f4e555f38245fdb030be760d088ee303434a8534",
+      "meta_sha256": "5a568cbdfc47bd416cff9494b706e3e43b7e9abb93d292bdbebba1da4fe90036"
+    },
+    {
+      "path": "Assets/Game/Audio/P0/p0_wall.wav",
+      "sha256": "d7b1ec90b44a146cb1c45c10d35d426a14bd09a13fea61593e90191ce58ca55f",
+      "meta_sha256": "a6a17ec998c490fad60bf11b6e2bd400c3b206eea6cc25fbfaa1b17d6d9a41c4"
+    },
+    {
+      "path": "Assets/Game/Audio/P0/p0_fail.wav",
+      "sha256": "7c1062a557859880264919f1e83cf6149591c58b345508cc9a69b0926054dbd3",
+      "meta_sha256": "cdbd9720bc87fe88b976d6eb45640de849025c8ee2323e4804dba4f8ef7a43dd"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelSession.cs",
+      "sha256": "1df4e3053991908eeef0c81a9f1071aedd328b6090f3a8208f686cc73a24de6f",
+      "meta_sha256": "6de56e99dca04664cb144e879c324bcd8a09962f4272b39560d6c53415720843"
+    },
+    {
+      "path": "Assets/Game/Data/Levels/Chapter01_01.asset",
+      "sha256": "9e00fd802178e5495453cec185de133c470db23ed09a7b1252737ce9ed67429a",
+      "meta_sha256": "7e2f0530a9edcba60a570b7fea3700a21e045bd8553c76b65903aef23d9aa402"
+    },
+    {
+      "path": "Assets/Game/Runtime/Shadow/ShadowService.cs",
+      "sha256": "1c93a83c36017cc1d8a1dd84323bd633b97b3b965e688ef7bf084006469df068",
+      "meta_sha256": "6a328b5a3fa0e037a6ce351f583ba1a96a9bab9ed48c9be62f871c4d6f029845"
+    },
+    {
+      "path": "Assets/Platformer/Scripts/LevelBounds2D.cs",
+      "sha256": "ba78cc8f3f251e0de70891b0632a1a079a51aef3375ef7fa3949fefcb04703f4",
+      "meta_sha256": "97080d7722aaaf08a17954652451dc9a900f4dbf7375d59eccdd5c6ad55fb4c6"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCameraLayout.cs",
+      "sha256": "2c32540fe09a04c626db1809ec73f023e6deb7958ca343f916d81b37865d1eb1",
+      "meta_sha256": "3f78366bdf8a2b1f59afa04f61a4f0380e452878a364f15d60db1f9ad90174a3"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/PuzzleGroup.cs",
+      "sha256": "f59f62bd1266edeeaf0d61a968a73f2ad74c5a47d043b2accc9b758711a5bb2c",
+      "meta_sha256": "cf5222ecb78cbcee5a307956f856bf37dd0f3b69b92f5edec0a53476f41c4405"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/foreground_grass.png",
+      "sha256": "17d8dbc7754e1e92637f074975451c836d9a192ec15a91be85274c7af0a38e18",
+      "meta_sha256": "ca9e5ffb2ccdbacc1af5f6c8eb8b3a0bccd6a622f73cb8bb25a0c3f9859724d6"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/background.png",
+      "sha256": "492aab61afb87ad9552b9f79125928ff95432d63176de4bc263854e120138941",
+      "meta_sha256": "c2c1b58de44f88c764b1a5ddbf40f276e668a6f397e12c2c251b2deaede33c2f"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab",
+      "sha256": "23ff90c93fab47df394de0eb1f691f14b1e4339cbbea5caee5fbdbaa45e119ec",
+      "meta_sha256": "076ee4c138d4ba4b35c0876d616a1e33cfa8ff94edb0dda215aa8852562e2edb"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/SignalBarrier.cs",
+      "sha256": "aed4c89bfcd0e44e2ad7fc66422194b31052d551508ebce35c552e4641cc2d8d",
+      "meta_sha256": "b825d65e2f3417d9196ce0f0108ce9beeb184ef2400362f6ec603746875276f1"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/pause_0.png",
+      "sha256": "f328107690d08d6505fdadbc8edb7d15b120d605be6c37165510c1af5d15851a",
+      "meta_sha256": "80e38181d21ea5107ef24a996ee83127950d22f954b0a8fcb656f8b536ac7845"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCircuitView.cs",
+      "sha256": "6f3295c0f71000c4d36f1544ff208d8798f445c5b4a34c76a506d8294d5eea62",
+      "meta_sha256": "07108c402772776198cc26c52b8a0952880012e7dc031c924c1df1590410453f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/PanFluteLift.cs",
+      "sha256": "839a7738bf371e2d15600a6e1671142cd174b2a34f306eb3374daaea01069aac",
+      "meta_sha256": "a8c37b6118eaae0c1a9b41cbc8a0b67c5bea270eea30863b8d58c2c5641f58ce"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/StarSwitch.cs",
+      "sha256": "d3e13fdf99a97324355a8f12fd7e9354aef6996faa85f27233334175933e63ba",
+      "meta_sha256": "f40dc628d44f475d61041d39a2470c2fa8cd2a72887c8f0449d2a18ce69cac49"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab",
+      "sha256": "75df1e48bcc4eca86634e9b68113ffa07ca8ee580137440f21774107925653c0",
+      "meta_sha256": "a6d9953efa739c4276ddc82dafa1ac064e61eda1436bc4c4b1c700c2bfde4e94"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/PressurePlate.cs",
+      "sha256": "0a7bf17bcb24c1b996227da3b0ef7f10efa2da9d99982b2b0905436c85d36f34",
+      "meta_sha256": "13f31eed00ca54f3a952ff6619a9d55fae3c7ebbba7127e18109642809fc5bf9"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Hazard.prefab",
+      "sha256": "33135cf26e58c53e97f7cc7fd4284df91d73910c57b522a78d55b2e26287d684",
+      "meta_sha256": "8bfecd08231f84c4511d1ccc0283422f7311eedaec879bc310a1fcae4e530c5f"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Drum.prefab",
+      "sha256": "9b454b8c366b3a6dcfe158874bdb4ae4fabd284a08486fd07fbd515309cfcf0b",
+      "meta_sha256": "99de88d442a00ac28af7e35c5eb276043a52817d3d67990c31c3b12ba665ef65"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/StarInstrument.cs",
+      "sha256": "577dbd5460e128aa1176b9f771ff085db285a6fedaaabfb639e6293cb61cbc17",
+      "meta_sha256": "798435ac0bd05a6156b98ec4b8728898883fa9d69edf218beee20c4722095277"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/BrittleWall.prefab",
+      "sha256": "f8ead93b7306ed635621ff78f771d4d88ceab39be673559be0e220a93a01108a",
+      "meta_sha256": "4dec2a03c6e331cd41164ac672b5adf2f80e106e53858723bfad55257fdeeccb"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/BrittleWall.cs",
+      "sha256": "75c0d49b4c41a2661195f4d3c4ee910a55d89b0df23463c932b689bc06ccc39b",
+      "meta_sha256": "818a8265e6b31f68133705dcb3de2e9f3e966a1ba84a8290d5fb4c1a45a8a6d9"
+    },
+    {
+      "path": "Assets/Game/Data/Levels/Chapter01_02.asset",
+      "sha256": "0dbfad43cade76daf2ef50419dee795924aa3003be18c995fb143b861ebeed4a",
+      "meta_sha256": "f1244dd5a22491c623fa011d2a80363041d3f3cb92e9d28224416616483bfdde"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterMechanismView.cs",
+      "sha256": "6cccfd432a5ccf9ee2a9d1810324b3e409228a2815582f8135899ce49e38da3d",
+      "meta_sha256": "a7b59a13ddfe0cd3d511d8ce98bd95e2b23ab99cb6adf2fb264ac5bc805c5fcb"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCompletionView.cs",
+      "sha256": "52e478ef1189fc9c3df825ae856099f68bdc39aec8a1a940b17b605dd92d1e2b",
+      "meta_sha256": "e3ed8b25328fad668f9c8da0f0963b002e28b5c90ba250f20b0cb470ac0c7aee"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/FlutePort.cs",
+      "sha256": "861ecfda91b3117ad6f75f7ff3900c0bcc3764441d21b060940626e8f797a6b4",
+      "meta_sha256": "3d9a54eeabec26964c2177650909bc50562606fa0cf4f3d87af68cd5d4c15aa9"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Bridge.prefab",
+      "sha256": "5802a671a86a46128f7f0deb7e3c6537670da97a272fb0c0b34453d255075f5d",
+      "meta_sha256": "6dd2160f634174480070e3296bb40c095abbd66f490bb17ef337e995c195012c"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/PressurePlate.prefab",
+      "sha256": "2e943b0f7e3146c120819a36061d70db50ca8214ee4ff96befb877dc902cdbcf",
+      "meta_sha256": "b166091447dd8b011bbb0f6f50a701d1d183a2eaba44e08c890689c2d5aa1296"
+    },
+    {
+      "path": "Assets/Game/Art/P0/stone.png",
+      "sha256": "eb17d39f9e8952d4d099be4cb0cf81226dc38136760b51bc5182ce87158c0782",
+      "meta_sha256": "8ddef5fdb47407db29e846f89d2a55ba60844a3f884e0da5b2a2869e5cb3b59d"
+    },
+    {
+      "path": "Assets/Game/Prefabs/Mechanisms/Stone.prefab",
+      "sha256": "c5ccf092c75ed6f67e4c096ccafc09cf1b545fe4c8c676594ddf6af45e95f86d",
+      "meta_sha256": "ef634de8b683f9aeb4d96c7aee98a30c3b2cdcd7a7d1b3e96bc6337e282fad9f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/ResettableBody2D.cs",
+      "sha256": "3350da30503c9988bcffff2f20b2932b3302dc89c305cf42820d5b5d233c736e",
+      "meta_sha256": "a70452878a29c8df36e809cb1c52991d14538de6177e4e51de09101405653f58"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/star_00.png",
+      "sha256": "b8af41a37c00318221a4c17d1b9bc035539dd9c1cd1e9c4e21ddd5f3d5dce8ac",
+      "meta_sha256": "b9af56ed95248746327af5df6bd76de7e24266f1cf8e7875cc4130d453122d12"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_idle_00.png",
+      "sha256": "116cf476bd4de5648b11603ed0e3e6892d2f400a2e97691a1c54b6623217f7a1",
+      "meta_sha256": "c7ac8591a2ce84dc871022f570eb5b132f8ab24e7073e657a3601af1cc8fd03b"
+    },
+    {
+      "path": "Assets/Game/Runtime/Player/PlayerInputReader.cs",
+      "sha256": "1c02ad128df70667c346d30c7dbee436775e49f59adf8458d867b16e9b9b3e61",
+      "meta_sha256": "1d01f745eacb2abe1b8b997967d47bf54496bc0f57a40138c76dd696007805b4"
+    },
+    {
+      "path": "Assets/Game/Input/ChapterPlayer.inputactions",
+      "sha256": "819179ac0df0bf347d6c154c1d083805d6df97b91dbb4e8d6a8440acdacbea4d",
+      "meta_sha256": "74c8e95fd8ca31d3980cff6d06a11c35c38543c57c8f11268b3ed197bdf9aced"
+    },
+    {
+      "path": "Assets/Game/Data/Player/CorePlayerTuning.asset",
+      "sha256": "f2d1d275e2e780168419c41c190a00ed57e2e34b3650d7218ffe9c67c30cb7d1",
+      "meta_sha256": "8d4d3dc54934abc38f41bcb024a60ce4ae85af0860b6db1317a079f0a26bce0e"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PlayerView.cs",
+      "sha256": "3453e5c2317eede0ab82a2dbba417db9c37c48327193f101497a0e7ba02be924",
+      "meta_sha256": "15e013ebf713bee81cf495e4fdedd82f7959ebd4f35e79e7cb74916a8ee71895"
+    },
+    {
+      "path": "Assets/Game/Runtime/Player/PlayerTuning.cs",
+      "sha256": "0758769c82b1e31b1dd0ca5111d51d23e6d777dcb9d446a32cbbbd6a3c1ebecf",
+      "meta_sha256": "c6c2e887ccafb9e714313779729869cb7402f6aa5bdef8a72c0f3199a4e491aa"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/checkpoint.png",
+      "sha256": "8fe3d76cb0733b18d63961467779dc03b0cecb8b0c9d8eb886cfb6d94c0ff882",
+      "meta_sha256": "d6ed4957c3a19de1760bdb10cc42e2585021ca9c74b61cce4ec6e85f84c41149"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/GrassTerrain.mat",
+      "sha256": "1bcdf28d16d554bb6c83db1145f01629003724f97242df8d0595387d8350c105",
+      "meta_sha256": "e0ef57db0c22c4a141c5f7065546c9ee0e07c7ed8b335fae9fb3d8dce24b1bbb"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GrassTerrainView.cs",
+      "sha256": "82a6015ef4216bd0c35c4b189a06ac3c4e59fba76913e99abdc055d795acea66",
+      "meta_sha256": "e18bf270864bc2ba1521cc66041b3b43eebb810359a0ec2ed9852431f100d019"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarFragment.cs",
+      "sha256": "6788f218124b88a237fb82f33906d2ff2dbbe25aa6ce02b9aebb212e516aad2e",
+      "meta_sha256": "df5f659667f6c4a78632bf92ac05a6b3418950f2fde27d5c4fbc043122f9c802"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/fragment_00.png",
+      "sha256": "e6deb4e37fb5c7697262bedd39a48403542e4c41d3fa8b31cd92dd252d7c4306",
+      "meta_sha256": "a19cc8bc89fa47cc52e4cea0e68fe21992a8a53046b914aabf160cf2fd8c40ce"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/SpriteSequenceView.cs",
+      "sha256": "e7118aef2021ba3f850ea8c1f907dee5b7d2e14e1527470febca2d0d3e250c61",
+      "meta_sha256": "be6cb6f9735bcc2b15554fb78836d2b4c67d2e819a3ebe9fb224b19097faefe6"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/fragment_01.png",
+      "sha256": "b958b4d2619c3214caf3c6ea976be58d67314c715587525ca149623596af0aed",
+      "meta_sha256": "501c36e0ec679e67b88951e8205cee207623739938726313b71abd60e87f227f"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/fragment_02.png",
+      "sha256": "aaa7c8ae745b410802690710806e702e7223ddfd2398251945caf37f8d69afa8",
+      "meta_sha256": "e7dc933aa3e65aff796b2f60945a0b9c484f3cf4afbeef94a29af66fe2ac8c3d"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/fragment_03.png",
+      "sha256": "daed73956666a5a03a3d8173ede267640602e70b754fb782a20e27d569649bf2",
+      "meta_sha256": "4ac866de007cbf30b815c50c66548f4d5ec9ea9df16f976f5528372b2bfef6aa"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/DeliveredArtSet.cs",
+      "sha256": "dbcbcd87271557276fbd235286a772584af5beb46cb2978fb2851d6bc12f5b8a",
+      "meta_sha256": "4390be41055ab35be0cd430dd10568e1318c8b3fa411a73819db448db297c5d0"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_idle_01.png",
+      "sha256": "aa41bece48aee46df4308a5fb0bf36530bb9510b7c0c14514b2515c50bdf4002",
+      "meta_sha256": "736169de41eed1fdcbf5ca68fdb15f1b4b3d7ece4b2beac38f24f5339003e931"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_idle_02.png",
+      "sha256": "2eaca6e3fe2f05f6423b17175ba8632c84513f51f951fc217094a4fed17b56ab",
+      "meta_sha256": "2738897fafc47f0dfc80d7283a11c1027154089930071eec8318a56d90c3dec7"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_idle_03.png",
+      "sha256": "4a701fb673797c6ccfe3a7475febe73389e957d70369762d1e64f61f1f436a78",
+      "meta_sha256": "66c32c0d4420dc63cd1679e669456894398cb33ea591711d6beb68652c6dd06a"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_walk_00.png",
+      "sha256": "97532da5b2b4e4a45b87543589478a8d3d3e5a44d0decadb04aeb20aa71f6486",
+      "meta_sha256": "9819c10bc106ac3909d25a1a126a0035ea412075d3bdc6e1c851f4637e38f2a2"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_walk_01.png",
+      "sha256": "8f06a05f64673d55b87afd8008721643e6fce3fde8296e3b7bc7ecc9d3e2d584",
+      "meta_sha256": "64e3829b27ac846d0dc36d61b3037079a262cf8f4ef10dd950c276bb8de4fb4b"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_walk_02.png",
+      "sha256": "426673774397de99c10565c0e7507e5ecf7f38af404c1bdb5dc2811574133a37",
+      "meta_sha256": "71b28c45c80be4201a6a24046a2456da7b639c1893592cdbcbb621323134ecc9"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_walk_03.png",
+      "sha256": "55e24e13d11ae5311564a5d5586510858392ee9875c90a827dc01b815e164da8",
+      "meta_sha256": "208944d2bb5bdc871979026378c1149b337c5fe7e995ecd4f5fd32bc44400977"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_00.png",
+      "sha256": "8f892adf6a43390f5c80fcb692dfc044969babfcad4d8d373c746effcfde91ed",
+      "meta_sha256": "f2fada3494e7619f35f7e2f6a6690bb0e759422187533783990b2bd42960557e"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_01.png",
+      "sha256": "1b2e8db49903a89c241039eabfd8e63b821b33f7f921f7c5f20f4d867587b747",
+      "meta_sha256": "6db12562c98a0fd2585fbd6c4e6fa5929b654ea0e06274acf5598c3a71adb4fa"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_02.png",
+      "sha256": "6446acd33c63f7c43c94ad32d82ce8a3b18c70751e2b93f58d5e9401920b151c",
+      "meta_sha256": "cd1b7b830bc20a4d41c7a2ea847b8e96111323ef569bd50d035f0c3eeae2a88e"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_03.png",
+      "sha256": "14b444de48587dfc04f2dd067cfd1b39a49a608797a200a89d60149afd053cad",
+      "meta_sha256": "5e4bf5e4ae5e0b307d6b82bcea5a6ed6e39fb6a009a507d044994bb1fae01e72"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_04.png",
+      "sha256": "5694cebb0a6181037a92c3413137690ba984633c58f202e9bfb3aa729bd5e3ed",
+      "meta_sha256": "bc3e62aa4f4d8231fb97a441b729fd90c590efca8c9ff9ca1a8e1aa165b5e5dc"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_05.png",
+      "sha256": "b300edc3015e0c79f1b035c22066d76f50c84e0a7bed196284f50eef0bf49bbb",
+      "meta_sha256": "db76357634ea7fe521a52641f3f4a8e3e2b0a0f471187860d6b8601cd1b0fb83"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_06.png",
+      "sha256": "b696cdc581089fc97bfc4b7725c36eb89cedf017d6e48794ac18f889996910b3",
+      "meta_sha256": "467a090340ea854c32bb86dbbc3c5abc5d578ac01d85e87edc0658d35b6f40f3"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_07.png",
+      "sha256": "a5ff48fa7bd8253fa7094401a212267644cec099647c2a539a7d71dbcdb6e322",
+      "meta_sha256": "599ba4527514de00121ad037939343a15ba07c0839306a7e8b2611e1a24f3b88"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_08.png",
+      "sha256": "a480d3b2693b22bca05c5da39f806f1f72431c5d46cd677e747cedaf27a907a8",
+      "meta_sha256": "ef1249a2aed31493149acf785b60fc92fa2f971815fae5ebb726ab5515dab1d9"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/human_launch_09.png",
+      "sha256": "340daba7612219ab4b3d7be79ba95170b9b14031dd4773af4e528fc550d108ab",
+      "meta_sha256": "104e5c0cc15f4f26e923c260c3aee7ec3591994b329dec3e279503958b9a9739"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/star_01.png",
+      "sha256": "c3395ea08228facd8f550d10163f25bd74929ff6b61202104ea5afe6d0a595b9",
+      "meta_sha256": "7fd5800bcb82249794109965cc5da79615efba3c97aa11d018ef882528402df1"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/star_02.png",
+      "sha256": "4b4b8e25f67c8ab37183cc2ae54692baab69403c034a4846d8046735b6e2331c",
+      "meta_sha256": "7b542c46a44d0fa1174d7deeebabec0f2eabe5022f8bf154693fe70f020d4905"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/star_03.png",
+      "sha256": "68bbbdd29371d930ea52fafdacaf3ce441bc2c701cc87ecd327cda1834e1db7e",
+      "meta_sha256": "e5dc4fa20df14a3a619e1c1cfa280e84b1b4ae4b46a7e0d1e94a9630992547ff"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/plate_up.png",
+      "sha256": "4d1dcb1ccc908b7b045c9f4f810643305e25bf479d6de16bdbf1f1971d3f12a5",
+      "meta_sha256": "1377b0e83ff6262a4b3f68d59b1a71665eba5a8ebda7f591041689a9c50a52b9"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/plate_down.png",
+      "sha256": "c7007b0cb77572595a4075e73acb5a9dbd583b2115601ccb0940af4f40b2612e",
+      "meta_sha256": "c3a6629ebe42af0af50a57edf79a574df7528122479957ac024c7a981eb434fd"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/rock_dark.png",
+      "sha256": "bd400da2788257b8fa53066ade93d9ada40d3b531bde91d0e1f8660ab4aca3ce",
+      "meta_sha256": "84bec60225db186bf6ef9d6378dcc4746fdcd5761a2c4b48aed52a68023b561b"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/rock_light.png",
+      "sha256": "d6f07b868da440994f45ed6947289474e762e17b72ceb1e46f8f5396586fc424",
+      "meta_sha256": "3abcc1cf2d5e1b526147e2e4d97bdfaa71b79268b2fcbcdaa49d531d79684e1f"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/title.png",
+      "sha256": "c837dd36b81aacdbadeaec991e21acf2f74411968a9014d77c2e1f9e53939bb5",
+      "meta_sha256": "07763f5cebcecb6a736115a38d24ea88e5cd377a5165b91de3690e47cf91c6c2"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/pause_1.png",
+      "sha256": "26e24e4653e4c39976a95f12f8f959853e911283ef6646df6b67882aad77cdf0",
+      "meta_sha256": "ebd039fc521a38be344396478cd47b35dca521c3dac73f66a12fce619d79417b"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/pause_2.png",
+      "sha256": "d4236359dc7f3fc02e54c1c2966c80110c671100d0d8913f3fc40f379359cab7",
+      "meta_sha256": "20a60e2bfa042a99fddce9c589eef0201e1753cac7893830868290a655954c73"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/pause_3.png",
+      "sha256": "5a800bfd772b663ba08b04a74cbe82e232908217049df2be0d2d2f149ff45067",
+      "meta_sha256": "a8406e9001abb2397f9867df3f0f2fabf803fde8cc0af760347254268b20e49d"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/PauseBlur.mat",
+      "sha256": "e108c20fddc7f2dc4825760106ee24731645609b6a72a38b155ba5aea3c4c696",
+      "meta_sha256": "f8a84fe69f226d8debac7813065eafa1b02903cc2c6770b061fd1cdebb8f6312"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/human_jump.png",
+      "sha256": "70691e6c5345879cd459364423dc42cfed8d5fd00f668e03c66655ef4b799a83",
+      "meta_sha256": "784293a39611f351e0b3672bb76e5b5027271ecbf17bc5d884bb23191f1b8f80"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/lyre.png",
+      "sha256": "d8766a3f2c2e6b9a5750401501c604714bfbc6adbd9e0ad840a2a84fa9fb2370",
+      "meta_sha256": "8b54781a48118ed15838f93054230999881d9cf6d29c729d5542e1e5a84e6a04"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_idle.png",
+      "sha256": "469b6bb47ceb3b00573772826ada93defeb55a351fdb5d76686f241c327f2412",
+      "meta_sha256": "05b5a7badf9e390c6b641a793eb8c85e9c030773757c6a7eab177ea3116fd1c6"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_00.png",
+      "sha256": "61a0b0b56b640eea09572e75728b9b857b775e0be884e20a3920180737424edb",
+      "meta_sha256": "0a9081575807f3e5a301ee00a7222e7fa2842e753a509af06ca8ecce2b96a5d3"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_01.png",
+      "sha256": "b1a2ef363843534627372e48a213b03d1dd36646e9facde642706ceb88370403",
+      "meta_sha256": "c320e3146df74b2a1082dcca3cd5affbf3244ce7e5baa31469022709ec9ef501"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_02.png",
+      "sha256": "21e7711b9aecedfc08f4900b99dffbacb97c6b0a7472f1f23eaf597a408eef21",
+      "meta_sha256": "d35b26d6d712d8137b2183ad8b436456b6b7567e401e942e1e4b5a3d4f27edd2"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_03.png",
+      "sha256": "cb21e5beb1f2fa049252dbf993c6178fc1dde2c05bb3adf0a5f15b11250ae634",
+      "meta_sha256": "d351d2471cc7492f1be5c3f8fc982d0c0601bd5f8cde15a531447f76b18a4fe1"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_04.png",
+      "sha256": "905dabebb9af7da48d650ad7d7cd5fe8b9efba8ea6a1109bcdb927ea58a1bf98",
+      "meta_sha256": "c919b791dec2e32606a3395a5abe1872afd4de7dd3b97e2d9785f747bdea6b0e"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_05.png",
+      "sha256": "1d566d1f3831ffc5bd5937d30aae90f19638509fd3d9dc8006026b213a59fa73",
+      "meta_sha256": "8dc6d306579ea29c3b597ae1c461e236826a8f2949ce63c96b54f92c76a1c933"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_06.png",
+      "sha256": "d70e3d8bf54efdfbccf0686d7414791aaf6b829941fc677be7be6e2b185d5473",
+      "meta_sha256": "9e10b67ad4bcfa87222e4d5502d7b8d8b626298b202de3293435ae8da9405e26"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_07.png",
+      "sha256": "0712af0759b775e7ded25442595df11b64f54bcf08672b063fd14f2502a88b27",
+      "meta_sha256": "d4e9826e85ed555eea56b2335bb51378ea6ada3103629b05bbf1d99a0ab42bcc"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_08.png",
+      "sha256": "b8af719d431ad132c069477de6e0e914f1a57f30bf1e2a1eaf3b93bce2239a7d",
+      "meta_sha256": "cf689db63f22444cca350480307aa100fda9c43db2708249cb7cfa46dcadd8fa"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/drum_hit_09.png",
+      "sha256": "c005b54cff0e8f17c6e0d3636f738bb369847ad4854dffb2200d4b8974359e0b",
+      "meta_sha256": "0d139e21adf889e79f8380ad594dffbf4e932c55adcbe13a2b02b71728aec3c6"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/terrain_middle.png",
+      "sha256": "278357e784c204ecc4b0bb6e116fef95f5af28e9d3df7973fd7070d5998cd6de",
+      "meta_sha256": "959bf783c43fbcaf884975dd91a6c5aac67e4b5bf08fc91c0754fbec1fbf1a75"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/terrain_left.png",
+      "sha256": "2bc385c7fbab8d01a26d2d264338b165b5fd4de43a595700f1d292d0af316fbc",
+      "meta_sha256": "20d4ff5b180fa22b9e5e5ff0db4e39cf1f9167cfb7bdbea2a248cc109c4e750b"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/terrain_right.png",
+      "sha256": "f94c29ad91866bf2fe9ab9ca6acaf8c9bd9b69d7dd1b271a577904f016479052",
+      "meta_sha256": "dc6f66dbd94683dcc0f3b01f89d6878702691c02db708bff7379261392709ece"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/terrain_soil.png",
+      "sha256": "dfb32e64bbe154cad3bafacc23803d12ad1a9368be7e612ea21792d468937b8d",
+      "meta_sha256": "ec312f531e197a8124900b061dd60bfe246f7c61c2c9dbff6747aaa3ca579fad"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/terrain_brush.png",
+      "sha256": "d56f16753162e491609448d7d6039619d18424d5df24d84d1e850d3c70bfb9c1",
+      "meta_sha256": "848f49bb7d0dab0b05151f1a6694f4bd953306669c7dbaacb10030e3975df01c"
+    },
+    {
+      "path": "Assets/Game/Runtime/Shadow/StarSocket.cs",
+      "sha256": "7b9fb98af75c9d9f4435a9194d0040bf2592c4c2f36ec1bec16cb01b163f7467",
+      "meta_sha256": "a0f92ae5ea9306021b6e9dad384fb885e3881c50c1943dd58b021caf284826ae"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/StarSocketArtView.cs",
+      "sha256": "6563d3b6e5274049880e0148141f5d2bb938c3ee0bca1dcb3022ee383fb9e4c0",
+      "meta_sha256": "cbf266036a02cb64ada236d5a964f88776cf0ff8b02dcc72d0bd720924776074"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/PressureWeight.cs",
+      "sha256": "a227d9d073bd9c9a8ac2b837d8680a2c42cab1a6bd54a2e80becc05582213c7f",
+      "meta_sha256": "69f9c2558c70be2cc903ab209e6597e774055a9c7ffeaf377a083e09fb839fb0"
+    },
+    {
+      "path": "Assets/Game/Art/P0/star.png",
+      "sha256": "e89e7e1f79863cea45ca0e3d06e6da14f09854a724c0bface53169f466a57080",
+      "meta_sha256": "3ce5deb5dd446002f0e0a16bbb16af187f5a7a2ebb28c9c9810eec2b5512fbb1"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelDefinition.cs",
+      "sha256": "53aa091b0a0f6e6324c0579357f45e1f27f24cfe002da8a86525a6848a73a3e6",
+      "meta_sha256": "9589ce593af98d96d09815b6f0e28d79195c17d2ad2da1ca1de578d26a089044"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/InstrumentArtView.cs",
+      "sha256": "e2de27d0fafa1392c8ade035c080fe57db3d2238821264676e6d6fa4f4ce0e10",
+      "meta_sha256": "f8c24bd59f26651e62ededeff68605f4dd4bd15fa069c291f11df9e7dbd6035f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PressurePlateArtView.cs",
+      "sha256": "37e4b701946133a9df287b4ee2baad8ff3463c8a7b403c3e88db1281a1739142",
+      "meta_sha256": "a47887ebf4ff9fbfc5534f7126b03e214b427022209e1e2cc58969f83540911f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/Hazard2D.cs",
+      "sha256": "0141e907d5d6f8fc6e4b60b591ff2d37a496ef46962d20fb725a05d904ac62ff",
+      "meta_sha256": "bc9f268a89a677c8cc3812276ca496f50d14b5fb18d53fa22c105c01cbcbb728"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/terrain_atlas.png",
+      "sha256": "206546b8503feb4121179ad3c2bae5510eb9a4774e0e5f21737df6c418626ca9",
+      "meta_sha256": "0301676addf4b63a38e8e8718ec1268b77c77db267d033251e8c45d19b9dcbdf"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/PauseBlur.shader",
+      "sha256": "1c4122338ddfb0e27e3cd5ebdd525d8e9e6275b823cfbf4156087cd58e6d798e",
+      "meta_sha256": "4f34c8c2fb8ccf4221019e3939bc0099e2c7a9347d6e86a3ec1515e3c185c255"
+    }
+  ],
+  "scene_direct_references": {
+    "Assets/Game/Scenes/Chapter01_01.unity": [
+      {
+        "guid": "5f7201a12d95ffc409449d95f23cf332",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Text.cs"
+      },
+      {
+        "guid": "1064d0ef73b126c4d9353d840e4c01e2",
+        "fileID": 12800000,
+        "path": "Assets/Game/Art/Fonts/MenuSans.ttf"
+      },
+      {
+        "guid": "fc1515ab76e54f068e2f2207940fab32",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Actions/InputActionReference.cs"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 4295774712195994428,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 4607645221578439398,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "254631c74572b2446b0f84e73ed78b37",
+        "fileID": 11400000,
+        "path": "Assets/Game/Data/Player/ChapterPlayerTuning.asset"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 8281171336732669563,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "26bc91e2dc12a83418b69990c6ae7371",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Player/PlayerStateMachine.cs"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 1930905122811811309,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 3399294306637156032,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 6411288336805614438,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "3e2b58c64eef7fc4492a236429d3b0b2",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/LevelPieceMetadata.cs"
+      },
+      {
+        "guid": "1603a54fbea043b389bee43a2d273f44",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/ProgressCondition.cs"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 648278928821910299,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 4756758576318313684,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 6255767256619276937,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 6353261352838634063,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 8074230888343174236,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "fe87c0e1cc204ed48ad3b37840f39efc",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Image.cs"
+      },
+      {
+        "guid": "e8389bb561989774f9b3e88b6df8b1be",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterCamera2D.cs"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 2268273660118387006,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 3141943957992762706,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 3898756808905323312,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 4410414279915124706,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 6183939193294388983,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "1e2c5ba0467e47f79b798a41a33d0247",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterGoalView.cs"
+      },
+      {
+        "guid": "67db9e8f0e2ae9c40bc1e2b64352a6b4",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Slider.cs"
+      },
+      {
+        "guid": "b3b1742dbb47d844d9aab6f8147cdca3",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/CameraBackdrop.cs"
+      },
+      {
+        "guid": "39fa3d8997a24136984ca6e2c99902bc",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Actions/InputActionAsset.cs"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 4362034128840761221,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 7417491549751250711,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 8193610366245877127,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "8f326f42a1174e64b057b2bcc615d5e1",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterTutorial.cs"
+      },
+      {
+        "guid": "468f64b2eb1179642bc7a09ca5f4a623",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Star/TrajectoryPreview.cs"
+      },
+      {
+        "guid": "8021596b1ed805744b440753bcd190b0",
+        "fileID": 2100000,
+        "path": "Assets/Game/Art/P0/Trajectory.mat"
+      },
+      {
+        "guid": "3ac302f8215363b468eccd71a4e56d8c",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/Checkpoint.cs"
+      },
+      {
+        "guid": "dc42784cf147c0c48a680349fa168899",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/GraphicRaycaster.cs"
+      },
+      {
+        "guid": "0cd44c1031e13a943bb63640046fad76",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/CanvasScaler.cs"
+      },
+      {
+        "guid": "a994d9e8fc7dbd84a97a457a4124e59f",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/PauseArtwork.cs"
+      },
+      {
+        "guid": "6a6ef9e8a564edf40910abb63db52c54",
+        "fileID": 11400000,
+        "path": "Assets/Game/Art/Delivery01/ChapterArt.asset"
+      },
+      {
+        "guid": "5547f8b314e72ae4596377e1c9c6d05b",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/PuzzlePauseMenu.cs"
+      },
+      {
+        "guid": "a087c15b31f0c444ea337f5e36168e9c",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/MenuAudioSettings.cs"
+      },
+      {
+        "guid": "41ebecb1f1068f4428c1f4256c097b9e",
+        "fileID": 24100000,
+        "path": "Assets/Game/Audio/Mixers/Core.mixer"
+      },
+      {
+        "guid": "4e29b1a8efbd4b44bb3f3716e73f07ff",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Button.cs"
+      },
+      {
+        "guid": "a97c105638bdf8b4a8650670310a4cd3",
+        "fileID": 2100000,
+        "path": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat"
+      },
+      {
+        "guid": "0aa5a041823c79549b0316db6171e5a5",
+        "fileID": -2532087816333192471,
+        "path": "Assets/Game/Art/P0/ring.png"
+      },
+      {
+        "guid": "3ab4026bcc5f43ff88840e68ee8bdb91",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/ChapterExit.cs"
+      },
+      {
+        "guid": "f289b4f679886bd488f70a35ca25c42b",
+        "fileID": 6200000,
+        "path": "Assets/Game/Data/Player/CoreFrictionless.physicsMaterial2D"
+      },
+      {
+        "guid": "1344c3c82d62a2a41a3576d8abb8e3ea",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/RawImage.cs"
+      },
+      {
+        "guid": "bcb48944085449445b56e6a1d00c3e5b",
+        "fileID": 907164677041836281,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlatformSocket.prefab"
+      },
+      {
+        "guid": "bcb48944085449445b56e6a1d00c3e5b",
+        "fileID": 4915293892968000765,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlatformSocket.prefab"
+      },
+      {
+        "guid": "bcb48944085449445b56e6a1d00c3e5b",
+        "fileID": 6106087299276468837,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlatformSocket.prefab"
+      },
+      {
+        "guid": "bcb48944085449445b56e6a1d00c3e5b",
+        "fileID": 6255646478348729783,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlatformSocket.prefab"
+      },
+      {
+        "guid": "bcb48944085449445b56e6a1d00c3e5b",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlatformSocket.prefab"
+      },
+      {
+        "guid": "6af5af2f4330fe741b4ccd3fb6988b50",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ShadowFeedback.cs"
+      },
+      {
+        "guid": "41ebecb1f1068f4428c1f4256c097b9e",
+        "fileID": 3773719922054554421,
+        "path": "Assets/Game/Audio/Mixers/Core.mixer"
+      },
+      {
+        "guid": "8ebd3796218383d4e9553450040d6a01",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_collect.wav"
+      },
+      {
+        "guid": "a6462cec77994f141b5f471eadf923a7",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_charge_start.wav"
+      },
+      {
+        "guid": "491cd29671aae0e44be53e72cf443125",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_reform.wav"
+      },
+      {
+        "guid": "23e00601b0d53ee478bf869226a47b2c",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Audio/CoreAudioFeedback.cs"
+      },
+      {
+        "guid": "af3eaaccae2dc8d41a973be88551ef9f",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_charge_loop.wav"
+      },
+      {
+        "guid": "1f61b29bbf3e5bf4b8129e3162312873",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_launch.wav"
+      },
+      {
+        "guid": "b4f4448990c5c7243b6e1c301f1566c8",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_wall.wav"
+      },
+      {
+        "guid": "187f4fd51dc67d74b98fc04008a48467",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_fail.wav"
+      },
+      {
+        "guid": "e7176319c913b8947b8529a0bf0c4d1b",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/LevelSession.cs"
+      },
+      {
+        "guid": "61ff7cd75ae88ba4f93f8b17005b807d",
+        "fileID": 11400000,
+        "path": "Assets/Game/Data/Levels/Chapter01_01.asset"
+      },
+      {
+        "guid": "b4ff7714605083c4d81b41547d8499e5",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Shadow/ShadowService.cs"
+      },
+      {
+        "guid": "ff5dfa02f2f2a6b4bb8c3da982292a9b",
+        "fileID": 11500000,
+        "path": "Assets/Platformer/Scripts/LevelBounds2D.cs"
+      },
+      {
+        "guid": "de53ffb5955b47ac8880949bfeac875d",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterCameraLayout.cs"
+      },
+      {
+        "guid": "86710e43de46f6f4bac7c8e50813a599",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/AspectRatioFitter.cs"
+      },
+      {
+        "guid": "bd938586721aac6408d16a95603b4807",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/PuzzleGroup.cs"
+      },
+      {
+        "guid": "683cbe8ffa1bfef48b33c734937846a6",
+        "fileID": 21300000,
+        "path": "Assets/Game/Art/Delivery01/foreground_grass.png"
+      },
+      {
+        "guid": "37f8f753e51cd2d4fb6d60259afcd84d",
+        "fileID": 21300000,
+        "path": "Assets/Game/Art/Delivery01/background.png"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 1643830966774082096,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 4549751685592727667,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 6417907723443708383,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "1dd11fdb07106d34a91d9e646eef79ff",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/SignalBarrier.cs"
+      },
+      {
+        "guid": "8aa4f385b1749c94aaf8ec215960601e",
+        "fileID": 21300000,
+        "path": "Assets/Game/Art/Delivery01/pause_0.png"
+      },
+      {
+        "guid": "01614664b831546d2ae94a42149d80ac",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Plugins/UI/InputSystemUIInputModule.cs"
+      },
+      {
+        "guid": "76c392e42b5098c458856cdf6ecaaaa1",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs"
+      }
+    ],
+    "Assets/Game/Scenes/Chapter01_02.unity": [
+      {
+        "guid": "fe87c0e1cc204ed48ad3b37840f39efc",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Image.cs"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 2268273660118387006,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 3141943957992762706,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 3898756808905323312,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 4410414279915124706,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 6183939193294388983,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "4ddc90b3f80671b47a5750758a92bb43",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Gate.prefab"
+      },
+      {
+        "guid": "1dd11fdb07106d34a91d9e646eef79ff",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/SignalBarrier.cs"
+      },
+      {
+        "guid": "3e2b58c64eef7fc4492a236429d3b0b2",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/LevelPieceMetadata.cs"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 648278928821910299,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 4756758576318313684,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 6255767256619276937,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 6353261352838634063,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 8074230888343174236,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "7b74de7454d88fa46b11f25aeb53aa37",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Solid.prefab"
+      },
+      {
+        "guid": "ab23e163b9274b6ab416dad93148a130",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterCircuitView.cs"
+      },
+      {
+        "guid": "998ccc7f78ce47379b9e271940665cce",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/PanFluteLift.cs"
+      },
+      {
+        "guid": "5f7201a12d95ffc409449d95f23cf332",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Text.cs"
+      },
+      {
+        "guid": "1064d0ef73b126c4d9353d840e4c01e2",
+        "fileID": 12800000,
+        "path": "Assets/Game/Art/Fonts/MenuSans.ttf"
+      },
+      {
+        "guid": "67db9e8f0e2ae9c40bc1e2b64352a6b4",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Slider.cs"
+      },
+      {
+        "guid": "fc1515ab76e54f068e2f2207940fab32",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Actions/InputActionReference.cs"
+      },
+      {
+        "guid": "a97c105638bdf8b4a8650670310a4cd3",
+        "fileID": 2100000,
+        "path": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat"
+      },
+      {
+        "guid": "683cbe8ffa1bfef48b33c734937846a6",
+        "fileID": 21300000,
+        "path": "Assets/Game/Art/Delivery01/foreground_grass.png"
+      },
+      {
+        "guid": "dc42784cf147c0c48a680349fa168899",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/GraphicRaycaster.cs"
+      },
+      {
+        "guid": "0cd44c1031e13a943bb63640046fad76",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/CanvasScaler.cs"
+      },
+      {
+        "guid": "f289b4f679886bd488f70a35ca25c42b",
+        "fileID": 6200000,
+        "path": "Assets/Game/Data/Player/CoreFrictionless.physicsMaterial2D"
+      },
+      {
+        "guid": "e984b63ed5d54e929a422621dc2e8d20",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/StarSwitch.cs"
+      },
+      {
+        "guid": "86710e43de46f6f4bac7c8e50813a599",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/AspectRatioFitter.cs"
+      },
+      {
+        "guid": "bd938586721aac6408d16a95603b4807",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/PuzzleGroup.cs"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 4295774712195994428,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 4607645221578439398,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "254631c74572b2446b0f84e73ed78b37",
+        "fileID": 11400000,
+        "path": "Assets/Game/Data/Player/ChapterPlayerTuning.asset"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 8281171336732669563,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "611b710c5046520419c5287ec09c8265",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Player/ChapterPlayer.prefab"
+      },
+      {
+        "guid": "26bc91e2dc12a83418b69990c6ae7371",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Player/PlayerStateMachine.cs"
+      },
+      {
+        "guid": "8aa4f385b1749c94aaf8ec215960601e",
+        "fileID": 21300000,
+        "path": "Assets/Game/Art/Delivery01/pause_0.png"
+      },
+      {
+        "guid": "2b58470f2203f80458b908a55d7d72fc",
+        "fileID": 3193344297942873491,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab"
+      },
+      {
+        "guid": "2b58470f2203f80458b908a55d7d72fc",
+        "fileID": 5033772965543779347,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab"
+      },
+      {
+        "guid": "2b58470f2203f80458b908a55d7d72fc",
+        "fileID": 5311929923406533394,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab"
+      },
+      {
+        "guid": "2b58470f2203f80458b908a55d7d72fc",
+        "fileID": 6041755704803147373,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab"
+      },
+      {
+        "guid": "2b58470f2203f80458b908a55d7d72fc",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab"
+      },
+      {
+        "guid": "2b58470f2203f80458b908a55d7d72fc",
+        "fileID": 7752687966795147939,
+        "path": "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab"
+      },
+      {
+        "guid": "05bd0124d876eea48ae7bae5c09b744f",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/PressurePlate.cs"
+      },
+      {
+        "guid": "1e2c5ba0467e47f79b798a41a33d0247",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterGoalView.cs"
+      },
+      {
+        "guid": "37f8f753e51cd2d4fb6d60259afcd84d",
+        "fileID": 21300000,
+        "path": "Assets/Game/Art/Delivery01/background.png"
+      },
+      {
+        "guid": "468f64b2eb1179642bc7a09ca5f4a623",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Star/TrajectoryPreview.cs"
+      },
+      {
+        "guid": "8021596b1ed805744b440753bcd190b0",
+        "fileID": 2100000,
+        "path": "Assets/Game/Art/P0/Trajectory.mat"
+      },
+      {
+        "guid": "76cc28d91c51e40418f9e347130524fd",
+        "fileID": 5025170709499980502,
+        "path": "Assets/Game/Prefabs/Mechanisms/Hazard.prefab"
+      },
+      {
+        "guid": "76cc28d91c51e40418f9e347130524fd",
+        "fileID": 6959386453670662399,
+        "path": "Assets/Game/Prefabs/Mechanisms/Hazard.prefab"
+      },
+      {
+        "guid": "76cc28d91c51e40418f9e347130524fd",
+        "fileID": 8870372415913441108,
+        "path": "Assets/Game/Prefabs/Mechanisms/Hazard.prefab"
+      },
+      {
+        "guid": "76cc28d91c51e40418f9e347130524fd",
+        "fileID": 9097043055008247234,
+        "path": "Assets/Game/Prefabs/Mechanisms/Hazard.prefab"
+      },
+      {
+        "guid": "76cc28d91c51e40418f9e347130524fd",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Hazard.prefab"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 1930905122811811309,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 3399294306637156032,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 6411288336805614438,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "74fde032704287b499f5edf20a818d4c",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Checkpoint.prefab"
+      },
+      {
+        "guid": "39fa3d8997a24136984ca6e2c99902bc",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Actions/InputActionAsset.cs"
+      },
+      {
+        "guid": "4e29b1a8efbd4b44bb3f3716e73f07ff",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Button.cs"
+      },
+      {
+        "guid": "1344c3c82d62a2a41a3576d8abb8e3ea",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/RawImage.cs"
+      },
+      {
+        "guid": "e8389bb561989774f9b3e88b6df8b1be",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterCamera2D.cs"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 4362034128840761221,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 7417491549751250711,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 8193610366245877127,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "f96f3aa806a951e4399ab4c447b8fe4e",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Fragment.prefab"
+      },
+      {
+        "guid": "01614664b831546d2ae94a42149d80ac",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Plugins/UI/InputSystemUIInputModule.cs"
+      },
+      {
+        "guid": "76c392e42b5098c458856cdf6ecaaaa1",
+        "fileID": 11500000,
+        "path": "Packages/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs"
+      },
+      {
+        "guid": "d5662e0d3295ed746b1549ae4e246068",
+        "fileID": 1936951424079690665,
+        "path": "Assets/Game/Prefabs/Mechanisms/Drum.prefab"
+      },
+      {
+        "guid": "d5662e0d3295ed746b1549ae4e246068",
+        "fileID": 3893520851705281564,
+        "path": "Assets/Game/Prefabs/Mechanisms/Drum.prefab"
+      },
+      {
+        "guid": "d5662e0d3295ed746b1549ae4e246068",
+        "fileID": 4110192623256868235,
+        "path": "Assets/Game/Prefabs/Mechanisms/Drum.prefab"
+      },
+      {
+        "guid": "d5662e0d3295ed746b1549ae4e246068",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Drum.prefab"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 1643830966774082096,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 4549751685592727667,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 6417907723443708383,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "d3463500d8c1a4b449e39f9a8ea19da0",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Lyre.prefab"
+      },
+      {
+        "guid": "d5f0913551d310440a173b78f145b5a5",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/StarInstrument.cs"
+      },
+      {
+        "guid": "7c81dfb403e66724b8e4e92f3404b9d0",
+        "fileID": 3557247899653994015,
+        "path": "Assets/Game/Prefabs/Mechanisms/BrittleWall.prefab"
+      },
+      {
+        "guid": "7c81dfb403e66724b8e4e92f3404b9d0",
+        "fileID": 3653662761899957041,
+        "path": "Assets/Game/Prefabs/Mechanisms/BrittleWall.prefab"
+      },
+      {
+        "guid": "7c81dfb403e66724b8e4e92f3404b9d0",
+        "fileID": 3995706025684261817,
+        "path": "Assets/Game/Prefabs/Mechanisms/BrittleWall.prefab"
+      },
+      {
+        "guid": "7c81dfb403e66724b8e4e92f3404b9d0",
+        "fileID": 4361894103424787523,
+        "path": "Assets/Game/Prefabs/Mechanisms/BrittleWall.prefab"
+      },
+      {
+        "guid": "7c81dfb403e66724b8e4e92f3404b9d0",
+        "fileID": 7294339919268192174,
+        "path": "Assets/Game/Prefabs/Mechanisms/BrittleWall.prefab"
+      },
+      {
+        "guid": "7c81dfb403e66724b8e4e92f3404b9d0",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/BrittleWall.prefab"
+      },
+      {
+        "guid": "e65cca7464ece8d4380ac14c06777e57",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/BrittleWall.cs"
+      },
+      {
+        "guid": "6af5af2f4330fe741b4ccd3fb6988b50",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ShadowFeedback.cs"
+      },
+      {
+        "guid": "41ebecb1f1068f4428c1f4256c097b9e",
+        "fileID": 3773719922054554421,
+        "path": "Assets/Game/Audio/Mixers/Core.mixer"
+      },
+      {
+        "guid": "8ebd3796218383d4e9553450040d6a01",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_collect.wav"
+      },
+      {
+        "guid": "a6462cec77994f141b5f471eadf923a7",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_charge_start.wav"
+      },
+      {
+        "guid": "491cd29671aae0e44be53e72cf443125",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_reform.wav"
+      },
+      {
+        "guid": "23e00601b0d53ee478bf869226a47b2c",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Audio/CoreAudioFeedback.cs"
+      },
+      {
+        "guid": "af3eaaccae2dc8d41a973be88551ef9f",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_charge_loop.wav"
+      },
+      {
+        "guid": "1f61b29bbf3e5bf4b8129e3162312873",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_launch.wav"
+      },
+      {
+        "guid": "b4f4448990c5c7243b6e1c301f1566c8",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_wall.wav"
+      },
+      {
+        "guid": "187f4fd51dc67d74b98fc04008a48467",
+        "fileID": 8300000,
+        "path": "Assets/Game/Audio/P0/p0_fail.wav"
+      },
+      {
+        "guid": "e7176319c913b8947b8529a0bf0c4d1b",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/LevelSession.cs"
+      },
+      {
+        "guid": "b9bb84ca71f657d4c935074d5ba77803",
+        "fileID": 11400000,
+        "path": "Assets/Game/Data/Levels/Chapter01_02.asset"
+      },
+      {
+        "guid": "b4ff7714605083c4d81b41547d8499e5",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Shadow/ShadowService.cs"
+      },
+      {
+        "guid": "ff5dfa02f2f2a6b4bb8c3da982292a9b",
+        "fileID": 11500000,
+        "path": "Assets/Platformer/Scripts/LevelBounds2D.cs"
+      },
+      {
+        "guid": "de53ffb5955b47ac8880949bfeac875d",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterCameraLayout.cs"
+      },
+      {
+        "guid": "7a9a8a72d74a4622a385cfc841e24646",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterMechanismView.cs"
+      },
+      {
+        "guid": "b3b1742dbb47d844d9aab6f8147cdca3",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/CameraBackdrop.cs"
+      },
+      {
+        "guid": "0aa5a041823c79549b0316db6171e5a5",
+        "fileID": -2532087816333192471,
+        "path": "Assets/Game/Art/P0/ring.png"
+      },
+      {
+        "guid": "6af1a2aef2b340c5b2e7ca74f4a2f0be",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterCompletionView.cs"
+      },
+      {
+        "guid": "9aed09e53b0947fea0a36f801822bf53",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/FlutePort.cs"
+      },
+      {
+        "guid": "55e7502faa90f654fa8cbf3c38900134",
+        "fileID": 1632558884340607739,
+        "path": "Assets/Game/Prefabs/Mechanisms/Bridge.prefab"
+      },
+      {
+        "guid": "55e7502faa90f654fa8cbf3c38900134",
+        "fileID": 1670150611814363469,
+        "path": "Assets/Game/Prefabs/Mechanisms/Bridge.prefab"
+      },
+      {
+        "guid": "55e7502faa90f654fa8cbf3c38900134",
+        "fileID": 4183964125036943236,
+        "path": "Assets/Game/Prefabs/Mechanisms/Bridge.prefab"
+      },
+      {
+        "guid": "55e7502faa90f654fa8cbf3c38900134",
+        "fileID": 4426348424088979149,
+        "path": "Assets/Game/Prefabs/Mechanisms/Bridge.prefab"
+      },
+      {
+        "guid": "55e7502faa90f654fa8cbf3c38900134",
+        "fileID": 5465148830969972527,
+        "path": "Assets/Game/Prefabs/Mechanisms/Bridge.prefab"
+      },
+      {
+        "guid": "55e7502faa90f654fa8cbf3c38900134",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Bridge.prefab"
+      },
+      {
+        "guid": "76f01dcb2a6cb1145bdbcbc7771a5950",
+        "fileID": 2530331906031657515,
+        "path": "Assets/Game/Prefabs/Mechanisms/PressurePlate.prefab"
+      },
+      {
+        "guid": "76f01dcb2a6cb1145bdbcbc7771a5950",
+        "fileID": 8119794749659671183,
+        "path": "Assets/Game/Prefabs/Mechanisms/PressurePlate.prefab"
+      },
+      {
+        "guid": "76f01dcb2a6cb1145bdbcbc7771a5950",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/PressurePlate.prefab"
+      },
+      {
+        "guid": "76f01dcb2a6cb1145bdbcbc7771a5950",
+        "fileID": 2350124466068719822,
+        "path": "Assets/Game/Prefabs/Mechanisms/PressurePlate.prefab"
+      },
+      {
+        "guid": "8f326f42a1174e64b057b2bcc615d5e1",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/ChapterTutorial.cs"
+      },
+      {
+        "guid": "a994d9e8fc7dbd84a97a457a4124e59f",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/PauseArtwork.cs"
+      },
+      {
+        "guid": "6a6ef9e8a564edf40910abb63db52c54",
+        "fileID": 11400000,
+        "path": "Assets/Game/Art/Delivery01/ChapterArt.asset"
+      },
+      {
+        "guid": "5547f8b314e72ae4596377e1c9c6d05b",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/PuzzlePauseMenu.cs"
+      },
+      {
+        "guid": "a087c15b31f0c444ea337f5e36168e9c",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Presentation/MenuAudioSettings.cs"
+      },
+      {
+        "guid": "41ebecb1f1068f4428c1f4256c097b9e",
+        "fileID": 24100000,
+        "path": "Assets/Game/Audio/Mixers/Core.mixer"
+      },
+      {
+        "guid": "3ac302f8215363b468eccd71a4e56d8c",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/Checkpoint.cs"
+      },
+      {
+        "guid": "ab85386544859584d9b1fb4b1120c7a5",
+        "fileID": 5725184139431673129,
+        "path": "Assets/Game/Art/P0/stone.png"
+      },
+      {
+        "guid": "1603a54fbea043b389bee43a2d273f44",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Mechanisms/ProgressCondition.cs"
+      },
+      {
+        "guid": "3ab4026bcc5f43ff88840e68ee8bdb91",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/ChapterExit.cs"
+      },
+      {
+        "guid": "64192cc6829e88c49bf5ba6ef80f4dbd",
+        "fileID": 2307360898121215356,
+        "path": "Assets/Game/Prefabs/Mechanisms/Stone.prefab"
+      },
+      {
+        "guid": "64192cc6829e88c49bf5ba6ef80f4dbd",
+        "fileID": 3732562124056005381,
+        "path": "Assets/Game/Prefabs/Mechanisms/Stone.prefab"
+      },
+      {
+        "guid": "64192cc6829e88c49bf5ba6ef80f4dbd",
+        "fileID": 8366839792887028912,
+        "path": "Assets/Game/Prefabs/Mechanisms/Stone.prefab"
+      },
+      {
+        "guid": "64192cc6829e88c49bf5ba6ef80f4dbd",
+        "fileID": 100100000,
+        "path": "Assets/Game/Prefabs/Mechanisms/Stone.prefab"
+      },
+      {
+        "guid": "64192cc6829e88c49bf5ba6ef80f4dbd",
+        "fileID": 9059472895552300925,
+        "path": "Assets/Game/Prefabs/Mechanisms/Stone.prefab"
+      },
+      {
+        "guid": "92979ac402f160341b2d7583837a817d",
+        "fileID": 11500000,
+        "path": "Assets/Game/Runtime/Level/ResettableBody2D.cs"
+      }
+    ]
+  },
+  "package_references": [
+    {
+      "guid": "5f7201a12d95ffc409449d95f23cf332",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Text.cs",
+      "sha256": "c4a18675506025e1ea440c4e80dc266c6fc054ed18e00819ff18e3bc08ada70a",
+      "meta_sha256": "a0611775734d3ed0051fb155c0730261cf36b84022472a67b96428f85dfe899b",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "fc1515ab76e54f068e2f2207940fab32",
+      "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Actions/InputActionReference.cs",
+      "sha256": "ee360ec873de33f3ed05ae32bc5c19b1163da10917971f171ceadf611e528538",
+      "meta_sha256": "91f82b09c58d930555e0828536bab1dad7e0559a0583c62b23b10de7acfdb1d5",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "fe87c0e1cc204ed48ad3b37840f39efc",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Image.cs",
+      "sha256": "d57775ae45de656cd2cc7c7ff503c38c8baa4888e6383fbadecec09a5c0ca1ea",
+      "meta_sha256": "5d5268c445723f854020175a8fdfe91d4ca7fbc62f360438d4224a3ecca32066",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "67db9e8f0e2ae9c40bc1e2b64352a6b4",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Slider.cs",
+      "sha256": "fd3b8f7997e0542159adfe0f741bf80603355b6bb107c2bc8b841a7e087059c0",
+      "meta_sha256": "8cb3a3f6e84382d5062971974e239d5ee64ecab36b80fc5d5487987ff0c80d5e",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "39fa3d8997a24136984ca6e2c99902bc",
+      "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Actions/InputActionAsset.cs",
+      "sha256": "a868b366987c8ba954575e4aef34caad5be9cdfde89225b25de46e1fcc5d8ee1",
+      "meta_sha256": "2cb1cfbe04c44b10a5ae6a32c8c32bff328df59351934866575d16c1ca802d67",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "dc42784cf147c0c48a680349fa168899",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/GraphicRaycaster.cs",
+      "sha256": "1625f39ea41156afec5995401d8aaab16eb931029cdf496963fddd4bbf0f66ca",
+      "meta_sha256": "bd85d59c1e6f2343419e25903d6ef60a7d4c39a491696cc04d1feb6865fd24b7",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "0cd44c1031e13a943bb63640046fad76",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/CanvasScaler.cs",
+      "sha256": "9a35d840a5ac93b653095984bf182faa13023b7d3844835b8d5e3852b336fd50",
+      "meta_sha256": "e60f5021b9d7f74b44c6c5aa722d924dfc48dad17afeac20f6114b02021442cd",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "4e29b1a8efbd4b44bb3f3716e73f07ff",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Button.cs",
+      "sha256": "e8f00d2c3b759c08408c97c75084e065a2a539662783b7f5835fae5d937e9e26",
+      "meta_sha256": "4430ccd81a742991bc19d4d0d230d7cc8e3c928673e3d98ba1d944f27a673415",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "a97c105638bdf8b4a8650670310a4cd3",
+      "path": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "sha256": "d8bb446a4852290139d56b13d09d9e81e23ed56e77171dd1594e4e3d4dddd245",
+      "meta_sha256": "d4cb079f1d198d2581e2cea8713c761593c431bbf5cc48af4ea7f34c15fecd18",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "1344c3c82d62a2a41a3576d8abb8e3ea",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/RawImage.cs",
+      "sha256": "ddca85c588d630786ddfb37d4c660ac584c4f2c4ca1f918c716ca101fe386a65",
+      "meta_sha256": "853f04e252f73c41d879f6dbc241d21a3f0f6025fec4d88c404cc082af3dec20",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "86710e43de46f6f4bac7c8e50813a599",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Layout/AspectRatioFitter.cs",
+      "sha256": "c433f85be46913c31817c56abbbfbd4869337bc86929c6ad6f45b4861f16c555",
+      "meta_sha256": "2ea3d947c17b33103a7027ce6e634da53336d519384658b536f0577f7863b235",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "01614664b831546d2ae94a42149d80ac",
+      "path": "Packages/com.unity.inputsystem/InputSystem/Runtime/Plugins/UI/InputSystemUIInputModule.cs",
+      "sha256": "6b6690d11d8f87fe1d4012a269bae8c2e0c92957d6b64466db7ad0ed30a0aefa",
+      "meta_sha256": "d6fbfb0f7ac63d39df2fe3ff62373bf46c4e90d3bd16c93d288c05d9f70baa07",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    },
+    {
+      "guid": "76c392e42b5098c458856cdf6ecaaaa1",
+      "path": "Packages/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs",
+      "sha256": "ea30343edcffd30f9cf3b8828a209cb5b2bc5eea07775394cb316f1d372847cb",
+      "meta_sha256": "38492b18fbb599b25b8407566441dedb3376722a86411c078089a4f1481769ad",
+      "resolved_from": "Windows PackageCache, read-only, not copied"
+    }
+  ],
+  "static_audit": {
+    "unresolved_asset_guids": [],
+    "prefab_recursion": true,
+    "authoring_defaults": [
+      "Assets/Game/Editor/CoreSceneAuthoring.cs",
+      "Assets/Game/Editor/LevelEditing/LevelPieceFactory.cs",
+      "Assets/Game/Editor/LevelEditing/M2SceneAuthoring.cs"
+    ],
+    "defaults_changed_in_this_task": false,
+    "note": "Scene GUID/fileID references followed through project prefab/material/config assets; package script GUIDs resolved read-only. Original texture/Sprite metadata unchanged. Procedural uses and runtime catalogs recorded separately in doc15 and ledger §12."
+  }
+}

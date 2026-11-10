@@ -1,0 +1,810 @@
+{
+  "revision": "delivery01-20261109",
+  "source_readme_sha256": "3deee901f8c42f7f17b55b7473d14a95ef3cc55765bf85595983dd50718f2ecc",
+  "coordinate_system": "rect_top_left: source pixels; pivot: Unity normalized bottom-left",
+  "assets": [
+    {
+      "file": "human_idle_00.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        50,
+        175,
+        674,
+        940
+      ],
+      "paste_offset": [
+        140,
+        49
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_idle_01.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        674,
+        175,
+        1306,
+        940
+      ],
+      "paste_offset": [
+        133,
+        48
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_idle_02.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        1306,
+        175,
+        1940,
+        940
+      ],
+      "paste_offset": [
+        138,
+        48
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_idle_03.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        1940,
+        170,
+        2580,
+        940
+      ],
+      "paste_offset": [
+        132,
+        50
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_walk_00.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        60,
+        1075,
+        685,
+        1850
+      ],
+      "paste_offset": [
+        134,
+        45
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_walk_01.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        690,
+        1075,
+        1325,
+        1850
+      ],
+      "paste_offset": [
+        175,
+        37
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_walk_02.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        1330,
+        1075,
+        1975,
+        1850
+      ],
+      "paste_offset": [
+        182,
+        38
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_walk_03.png",
+      "source": "sprite_03.PNG",
+      "source_sha256": "b8b39e12bf1a82c1823f7ca5c59e47e17c277a34316d41298552a980c9afbc8c",
+      "rect_top_left": [
+        1975,
+        1075,
+        2620,
+        1850
+      ],
+      "paste_offset": [
+        191,
+        40
+      ],
+      "width": 1024,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_00.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        50,
+        170,
+        680,
+        945
+      ],
+      "paste_offset": [
+        101,
+        28
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_01.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        700,
+        180,
+        1300,
+        945
+      ],
+      "paste_offset": [
+        116,
+        33
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_02.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        1300,
+        180,
+        1936,
+        945
+      ],
+      "paste_offset": [
+        98,
+        33
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_03.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        1936,
+        170,
+        2595,
+        945
+      ],
+      "paste_offset": [
+        86,
+        28
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_04.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        2605,
+        170,
+        3310,
+        945
+      ],
+      "paste_offset": [
+        63,
+        28
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_05.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        48,
+        1060,
+        818,
+        1830
+      ],
+      "paste_offset": [
+        31,
+        31
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_06.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        820,
+        1130,
+        1420,
+        1770
+      ],
+      "paste_offset": [
+        116,
+        96
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_07.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        1495,
+        1130,
+        2005,
+        1760
+      ],
+      "paste_offset": [
+        161,
+        101
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_08.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        2090,
+        1120,
+        2640,
+        1760
+      ],
+      "paste_offset": [
+        141,
+        96
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "human_launch_09.png",
+      "source": "sprite_01.PNG",
+      "source_sha256": "79933f929ef26ca6e5b71a4881c1f3c640ebbd62b463d557b15d3bb53a2ebee8",
+      "rect_top_left": [
+        2790,
+        1130,
+        3310,
+        1760
+      ],
+      "paste_offset": [
+        156,
+        101
+      ],
+      "width": 832,
+      "height": 832,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "star_00.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        190,
+        130,
+        710,
+        790
+      ],
+      "paste_offset": [
+        92,
+        22
+      ],
+      "width": 704,
+      "height": 704,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "star_01.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        810,
+        130,
+        1355,
+        790
+      ],
+      "paste_offset": [
+        79,
+        22
+      ],
+      "width": 704,
+      "height": 704,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "star_02.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        1400,
+        130,
+        1940,
+        790
+      ],
+      "paste_offset": [
+        82,
+        22
+      ],
+      "width": 704,
+      "height": 704,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "star_03.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        2050,
+        130,
+        2600,
+        790
+      ],
+      "paste_offset": [
+        77,
+        22
+      ],
+      "width": 704,
+      "height": 704,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "fragment_00.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        350,
+        1570,
+        540,
+        1810
+      ],
+      "paste_offset": [
+        33,
+        8
+      ],
+      "width": 256,
+      "height": 256,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 256
+    },
+    {
+      "file": "fragment_01.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        675,
+        1570,
+        825,
+        1810
+      ],
+      "paste_offset": [
+        53,
+        8
+      ],
+      "width": 256,
+      "height": 256,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 256
+    },
+    {
+      "file": "fragment_02.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        1000,
+        1570,
+        1110,
+        1810
+      ],
+      "paste_offset": [
+        73,
+        8
+      ],
+      "width": 256,
+      "height": 256,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 256
+    },
+    {
+      "file": "fragment_03.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        1290,
+        1570,
+        1440,
+        1810
+      ],
+      "paste_offset": [
+        53,
+        8
+      ],
+      "width": 256,
+      "height": 256,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 256
+    },
+    {
+      "file": "plate_up.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        190,
+        1145,
+        710,
+        1255
+      ],
+      "paste_offset": [
+        12,
+        9
+      ],
+      "width": 544,
+      "height": 128,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 384
+    },
+    {
+      "file": "plate_down.png",
+      "source": "sprite_02.PNG",
+      "source_sha256": "6b0cd9d08ad46987ae06c35295c7822a579804b4da51dd6ca2c020cdc9e2d1b3",
+      "rect_top_left": [
+        800,
+        1145,
+        1320,
+        1255
+      ],
+      "paste_offset": [
+        12,
+        9
+      ],
+      "width": 544,
+      "height": 128,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 384
+    },
+    {
+      "file": "rock_dark.png",
+      "source": "rock-dark.PNG",
+      "source_sha256": "5abbcb7221d92b89584272ccfa41ac0399af01523ef23fdf3eeca0d17c8dd0eb",
+      "rect_top_left": [
+        332,
+        69,
+        3713,
+        3550
+      ],
+      "paste_offset": null,
+      "width": 995,
+      "height": 1024,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "rock_light.png",
+      "source": "rock-light.PNG",
+      "source_sha256": "645100200f12fddcaa6b08f3d836a9973e34b3cb62bbcb5d3540299189e1d545",
+      "rect_top_left": [
+        332,
+        69,
+        3713,
+        3550
+      ],
+      "paste_offset": null,
+      "width": 995,
+      "height": 1024,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "checkpoint.png",
+      "source": "spawn-point.PNG",
+      "source_sha256": "34235e72eed7f417244d7b679320544ca70692bc1ce535860d5dde1a39c5477f",
+      "rect_top_left": [
+        0,
+        59,
+        3840,
+        3796
+      ],
+      "paste_offset": null,
+      "width": 1024,
+      "height": 997,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512
+    },
+    {
+      "file": "background.png",
+      "source": "bg-level1.PNG",
+      "source_sha256": "362468aaae143cfd20d5d08a0a6c515e023ebc0387b69aa4fc22c505f5d00cde",
+      "rect_top_left": null,
+      "paste_offset": null,
+      "width": 1920,
+      "height": 1080,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 128
+    },
+    {
+      "file": "foreground_grass.png",
+      "source": "fg-level1-grass.PNG",
+      "source_sha256": "fe6bd3e4b56ee5247aec44173173e5efd1237f47c363ea7e5e011a753dcaa1a8",
+      "rect_top_left": null,
+      "paste_offset": null,
+      "width": 1920,
+      "height": 1080,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 128
+    },
+    {
+      "file": "title.png",
+      "source": "tittle-screen.PNG",
+      "source_sha256": "87611ace1a0f360073bce84f8a752c0d6ed8b093df1fca3de8a2983844147ee7",
+      "rect_top_left": null,
+      "paste_offset": null,
+      "width": 1920,
+      "height": 1080,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 128
+    },
+    {
+      "file": "pause_0.png",
+      "source": "IMG_6055.PNG",
+      "source_sha256": "4ffef56121d52e98a3ce323cb6bc65c650240d8293d519776b03e0e026dbf412",
+      "rect_top_left": null,
+      "paste_offset": null,
+      "width": 1920,
+      "height": 1080,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 100
+    },
+    {
+      "file": "pause_1.png",
+      "source": "IMG_6054.PNG",
+      "source_sha256": "5fcab03ec62c724066731b712b194ea336a7e38e3a96807d1079e4bbbeeea96e",
+      "rect_top_left": null,
+      "paste_offset": null,
+      "width": 1920,
+      "height": 1080,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 100
+    },
+    {
+      "file": "pause_2.png",
+      "source": "IMG_6053.PNG",
+      "source_sha256": "4c402fb601976f9feba7d03afd4e7af9c54b3839317f74ec34008db569287726",
+      "rect_top_left": null,
+      "paste_offset": null,
+      "width": 1920,
+      "height": 1080,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 100
+    },
+    {
+      "file": "pause_3.png",
+      "source": "main-menu.PNG",
+      "source_sha256": "d6a2a3c6a68b204d13b862ec74893cb71ef4afb0a63dee177145c6f495003aa9",
+      "rect_top_left": null,
+      "paste_offset": null,
+      "width": 1920,
+      "height": 1080,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 100
+    }
+  ],
+  "integrations": {
+    "star_socket": {
+      "revision": "socket-art-20261110",
+      "date": "2026-11-10",
+      "delivery_ids": [
+        "ME-02"
+      ],
+      "checklist_ids": [
+        "ART-011"
+      ],
+      "empty_sprite": "rock_dark.png",
+      "occupied_sprite": "rock_light.png",
+      "state_authority": "StarSocket.Shadows.ActiveSocket",
+      "recall": "Keep RockLight until the real 1-second recall completes, then RockDark.",
+      "visual_height_units": 0.7,
+      "import_change": false,
+      "prefabs": [
+        "Assets/Game/Prefabs/Mechanisms/PlatformSocket.prefab",
+        "Assets/Game/Prefabs/Mechanisms/PlateSocket.prefab"
+      ],
+      "presentation": "Assets/Game/Runtime/Presentation/StarSocketArtView.cs",
+      "provenance": "SOURCE_USAGE.md; asset source hashes and crop/pivot/PPU remain in assets[]; layered sources and separate attribution/license manifest remain missing.",
+      "scenes": [
+        "Assets/Game/Scenes/Chapter01_ShadowSlice.unity",
+        "Assets/Game/Scenes/M2_MechanismGallery.unity"
+      ],
+      "validation_record": "docs/09-美术试装记录.md#2026-11-10：星槽暗/亮岩石替换",
+      "status": "Integrated and checked in Windows Editor; full ME-02 delivery acceptance remains pending."
+    }
+  },
+  "creator": "不眠巷",
+  "attribution_updated": "2026-11-11 user corrected artist credit to 不眠巷; see CREDITS.md."
+}

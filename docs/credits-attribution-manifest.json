@@ -1,0 +1,147 @@
+{
+  "revision": "credits-attribution-20261111",
+  "date": "2026-11-11",
+  "request": {
+    "art": "不眠巷",
+    "sound": "阿锰"
+  },
+  "baseline": "Task-start contents backed up locally in ignored tools/credits/attribution-before; existing dirty work preserved.",
+  "scene": "Assets/Game/Scenes/MainMenu.unity",
+  "scene_change": "Only two m_Text fields; all serialized object IDs preserved; Unity-added trailing whitespace normalized.",
+  "font": {
+    "path": "Assets/Game/Art/Fonts/MenuSans.ttf",
+    "codepoints": 223,
+    "preserved": 219,
+    "added": [
+      "眠",
+      "巷",
+      "阿",
+      "锰"
+    ],
+    "guid_preserved": true,
+    "provenance": "Assets/Game/Art/Fonts/{manifest.json,README.md,LICENSE.txt}"
+  },
+  "validation": {
+    "editor": "Windows Unity 6000.0.84f1 / NVIDIA GeForce RTX 4060 Laptop GPU",
+    "resolution": [
+      1423,
+      656
+    ],
+    "frames": [
+      1287,
+      1289,
+      12075
+    ],
+    "compile": "completed without errors",
+    "runtime": "All credits glyphs present; UI raycast/PointerClick open/back and capture release passed; normal and grayscale screenshot inspected.",
+    "automated_test": "No verdict: async targeted test remained running and was cancelled. Lingering TestRunner API job cancelled and confirmed inactive.",
+    "escape": "Synthetic Escape did not close in this test environment; no passing result claimed; related input/close code unchanged.",
+    "console": "No new runtime errors during visual/open/back review. Command/eval diagnostic errors saved separately.",
+    "evidence": "Windows local Screenshots/CreditsAttribution20261111/",
+    "restored": "Play stopped; test runner inactive; clean MainMenu loaded; Version Control window focused; temporary input settings restored; auto tick true / 16 ms; resolution/audio/start scene unchanged.",
+    "build": "Not rebuilt; previous independent builds retain old credits.",
+    "formal_art_acceptance": false
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "874fbfadb88d193e00d345e901ed9b1ee9b11697ad7ae047c0969676d896c194"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "e8bfab72cebe1ec6b7a50aca0afb7b9d93fa3820b70282ed7da55d8e12b5b819"
+    },
+    {
+      "path": "docs/02-美术交付清单.md",
+      "sha256": "dc326160142dccb8720ee92bb81a721c266d409e21b596b5d7580ebce6762d66"
+    },
+    {
+      "path": "docs/17-主页音乐与制作名单.md",
+      "sha256": "025c1a55d6a739a1a7edb7138a8c7c44568424558c47ef1be67cc825c7a021f7"
+    },
+    {
+      "path": "docs/03-音频交付清单.md",
+      "sha256": "9e046d9c7d741b9e8f6bbb21aae8517de9b0f4c4040208b778b01c61486b5b64"
+    },
+    {
+      "path": "docs/16-首批音频接入.md",
+      "sha256": "f98230264809c738d133ca714dd3f8beaa9ee8c25b2bf57dd6e97c570f7ffa8c"
+    },
+    {
+      "path": "docs/06-占位美术替换Checklist.md",
+      "sha256": "2cab8b35c9c2ca1eb609f5ef177b85122028af8d5244ad642c259d4113ac82e5"
+    },
+    {
+      "path": "docs/04-开发进度.md",
+      "sha256": "b80ed85ab205843d515439f3ebb6e44a186828188599c3886eeda566ea8d69c4"
+    },
+    {
+      "path": "Assets/Game/Editor/MainMenuPresentationAuthoring.cs",
+      "sha256": "22df7dcb72ba640d103da32ab6f0ab662936b111a600a17d673b1e3057a462ac"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/README.md",
+      "sha256": "5abeea6e3c5e725dc50015a8567ae5f69961f9ceec311c0d6c90af5bd1824ac0"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery02/manifest.json",
+      "sha256": "58b34b4974e2ac59aea9faec38a77f9a78cca9bb261b39a967e4029d14f3aeac"
+    },
+    {
+      "path": "Assets/Game/Audio/Delivery01/README.md",
+      "sha256": "bf741ba2d7ea50a22b4e82bc7fc893a07d4eeaef74806da0b4b1359a38afc255"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/MainMenuPresentationTests.cs",
+      "sha256": "8dd350fe711fe18a0233c9d7dbf93ed9c3f1da5ad6b0ca0185e67e3a2736fca4"
+    },
+    {
+      "path": "Assets/Game/Audio/Delivery01/manifest.json",
+      "sha256": "0b84db92a6852bce92fbbc1b74bcdbebf7730f9ab1270539575e6f470318a7e4"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/README.md",
+      "sha256": "300266ff1b94003e6c391f315c23ed3f9099401c87050427853a64768f7f9bb4"
+    },
+    {
+      "path": "Assets/Game/Art/Delivery01/manifest.json",
+      "sha256": "08f9915cadd8e41ab6230526b6dd73401a8591bff12d67bcfa57b665be9e549f"
+    },
+    {
+      "path": "Assets/Game/Scenes/MainMenu.unity",
+      "sha256": "64af3d434739615ee74e244d42aa99820b7441d34e7fac31c854aa293c29ef4c"
+    },
+    {
+      "path": "Assets/Game/Art/Fonts/MenuSans.ttf",
+      "sha256": "78919b04c53f9906934adac676164d438373af73decdb13e43a4d3e5fe40166e"
+    },
+    {
+      "path": "Assets/Game/Art/Fonts/manifest.json",
+      "sha256": "dd9d16c044a98d66fbcf200a0205bb935d12c1b8da54bad1c776084467b660cb"
+    },
+    {
+      "path": "Assets/Game/Art/Fonts/README.md",
+      "sha256": "5e1ff7bf2069e6ef3853d0272f6506d8b2cc84edcf67245a2b421e774d633f42"
+    }
+  ],
+  "release_r3": {
+    "build": {
+      "buildId": "build_dfb7e108c56e",
+      "result": "Succeeded",
+      "platform": "StandaloneWindows64",
+      "totalErrors": 0,
+      "totalWarnings": 186,
+      "buildTimeMs": 17230,
+      "totalSizeBytes": 300714411
+    },
+    "package": {
+      "archive": "Builds/GreekStar-Windows-x64-20261111-r3.zip",
+      "bytes": 82374045,
+      "files": 199,
+      "sha256": "e8bcc4c9611eba792d3f20b70dad14c6701e09a0636b5493c5bdec3af507c63f",
+      "crcVerified": true
+    },
+    "smoke": "Standalone 1280x720 startup and normal quit passed; player.log has no errors. Automated click did not open Credits, so standalone credits/Esc are not claimed. Previous Editor visual verification retained.",
+    "tests": "Full suite not rerun, per user speed priority."
+  }
+}

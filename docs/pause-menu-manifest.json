@@ -1,0 +1,150 @@
+{
+  "revision": "pause-right-20261111",
+  "date": "2026-11-11",
+  "inventoryId": "ART-023",
+  "deliveryIds": [
+    "UI-06",
+    "UI-07",
+    "UI-10"
+  ],
+  "batches": [
+    "P1",
+    "P2"
+  ],
+  "sourceRevision": "c8c28782e72594bf017a4ffd540c101267ac839e",
+  "sourceHasUncommittedChanges": true,
+  "files": {
+    "Assets/Game/Editor/M2MenuAuthoring.cs": "a952ec08dd1ee11f1814757c67777959511b7fe7ebe8513960c2f157439cb298",
+    "Assets/Game/Scenes/Chapter01_01.unity": "3d24b813a9a8fd82c8a215bb10c0b00479803fc4e83ea01bf94065c4d3915b13",
+    "Assets/Game/Scenes/Chapter01_02.unity": "d10eada4a578950ee2af606da34bd71fb0d18dec36e07cc92b9dc3fccf72ccc0",
+    "Assets/Game/Scenes/M2_MechanismGallery.unity": "c6758c95ad3df92ee3a8f28cc5fe7d9b327b2fb35e06e1a0c65a46717f45c9fb",
+    "docs/02-美术交付清单.md": "52380bbcd032ec7e1da573ac4a3da4314c7ee203add5efa373992d8edf05c97d",
+    "docs/06-占位美术替换Checklist.md": "33d9c1c6c068cb4a2777947fd0a19fa57a5788458d8b6785baa1b8eb72905407"
+  },
+  "dependenciesUnchanged": {
+    "Assets/Game/Art/Delivery01/pause_0.png": "f328107690d08d6505fdadbc8edb7d15b120d605be6c37165510c1af5d15851a",
+    "Assets/Game/Art/Delivery01/pause_1.png": "26e24e4653e4c39976a95f12f8f959853e911283ef6646df6b67882aad77cdf0",
+    "Assets/Game/Art/Delivery01/pause_2.png": "d4236359dc7f3fc02e54c1c2966c80110c671100d0d8913f3fc40f379359cab7",
+    "Assets/Game/Art/Delivery01/pause_3.png": "5a800bfd772b663ba08b04a74cbe82e232908217049df2be0d2d2f149ff45067",
+    "Assets/Game/Art/Delivery01/manifest.json": "831588cae34eb463d971b306a7ae60452bcded93a297738fa326849ea7dd3cbb",
+    "Assets/Game/Art/Delivery01/SOURCE_USAGE.md": "3deee901f8c42f7f17b55b7473d14a95ef3cc55765bf85595983dd50718f2ecc",
+    "Assets/Game/Art/Fonts/MenuSans.ttf": "35bb06d7e2253f8fc205b024866d3bd2c5cf724137e7042881b2fbab556456ce",
+    "Assets/Game/Art/Fonts/manifest.json": "393b9db1addc5df178154f1cd6efaf02bc249ffcb5f5b84b00e94eec79247fc5",
+    "Assets/Game/Art/Fonts/LICENSE.txt": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  "sourcePolicyReadOnly": {
+    "path": "../H-ONE-arts/README.md",
+    "sha256": "a1aa5962e74a380f08451f486a7c4b6594ecdcbc989de992df62ff420f061999",
+    "snapshot": "Assets/Game/Art/Delivery01/SOURCE_USAGE.md"
+  },
+  "layout": {
+    "hierarchy": "Presentation/PuzzlePauseMenu/Panel/MenuControls",
+    "oldAnchors": [
+      [
+        0,
+        0
+      ],
+      [
+        0.35,
+        1
+      ]
+    ],
+    "newAnchors": [
+      [
+        0.65,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "offsets": [
+      0,
+      0
+    ],
+    "canvasReference": [
+      1920,
+      1080
+    ],
+    "canvasMatch": 0.5,
+    "authoring": "M2MenuAuthoring.UpgradePause",
+    "sceneObjectIdsPreserved": true,
+    "serializationNotes": "Unity added trailing spaces and existing default delivery/layout/impact fields when saving; gameplay roots and references preserved."
+  },
+  "validation": {
+    "editor": "Unity 6000.0.84f1 on Windows",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "layoutResolutions": [
+      "1280x720",
+      "1920x1080",
+      "1280x800"
+    ],
+    "observedFrames": [
+      607,
+      1376,
+      3966,
+      4566,
+      4785,
+      5545
+    ],
+    "uiRaycasts": {
+      "buttons": 4,
+      "sliders": 2,
+      "result": "passed"
+    },
+    "resumePointerClick": "passed",
+    "editorGameplayRegression": "not accepted: initial test session had uninitialized player/trajectory and Input System assertions; diagnostics exported to editor-errors.json",
+    "standalone": {
+      "resolution": "1280x720",
+      "passed": [
+        "startup",
+        "enter first chapter",
+        "move right",
+        "pause with Esc",
+        "right-side pause controls",
+        "resume by pointer click",
+        "normal shutdown"
+      ],
+      "runtimeErrors": 0,
+      "evidence": "Screenshots/PauseRight20261111/player-{menu,game,moved,paused,resumed}.png and player.log"
+    },
+    "finalEditorConsole": {
+      "errors": 0,
+      "warnings": 1,
+      "note": "Test errors exported before clearing Console; standalone log checked independently"
+    },
+    "restored": {
+      "playMode": "stopped",
+      "openScene": "Assets/Game/Scenes/MainMenu.unity",
+      "sceneDirty": false,
+      "playStartScene": "Assets/Game/Scenes/MainMenu.unity",
+      "gameView": "original Free Aspect; 3 temporary fixed sizes removed",
+      "projectSettings": "byte-identical to pre-build Windows file",
+      "runInBackground": true
+    },
+    "limits": [
+      "no full-level completion",
+      "two other scenes verified by serialized layout and object IDs",
+      "full art batches remain awaiting acceptance"
+    ]
+  },
+  "build": {
+    "buildId": "build_a4c904ab5722",
+    "result": "Succeeded",
+    "platform": "StandaloneWindows64",
+    "totalErrors": 0,
+    "totalWarnings": 186,
+    "buildTimeMs": 11452,
+    "totalSizeBytes": 300713259
+  },
+  "package": {
+    "archive": "GreekStar-Windows-x64-20261111-r2.zip",
+    "archiveBytes": 73591579,
+    "unpackedBytes": 300721282,
+    "fileCount": 205,
+    "sha256": "a6a2a28a28865175da96b18e0eaff901d4045d124f8a183a4b7f46b4f16c661f",
+    "crcVerified": true
+  },
+  "artAcceptance": "integrated awaiting acceptance; parent unchecked"
+}

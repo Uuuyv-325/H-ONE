@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e1d6c2cd69c2249a80e4ccc09fa498, type: 3}
+  m_Name: ChapterArt
+  m_EditorClassIdentifier: 
+  Idle:
+  - {fileID: 21300000, guid: f2aa24b3893dd294682bbd60dc42d8bd, type: 3}
+  - {fileID: 21300000, guid: d3226fb27641bd04496a971d351ea4f6, type: 3}
+  - {fileID: 21300000, guid: 7d0570c192347154bb4d4adb70d55431, type: 3}
+  - {fileID: 21300000, guid: 1b3d5eccacbe8174d9c05d94c36bb8c4, type: 3}
+  Walk:
+  - {fileID: 21300000, guid: a4bd690744455e446a017ec5eed83167, type: 3}
+  - {fileID: 21300000, guid: 1483ea91a054bd946b87fdc71ef3e04f, type: 3}
+  - {fileID: 21300000, guid: aaa781af6be46df41ac9764b9b7d78b5, type: 3}
+  - {fileID: 21300000, guid: 1c563880871848047b52e2f007df4d1f, type: 3}
+  Launch:
+  - {fileID: 21300000, guid: 34b7c2aae1a49de4cb8acef0b5940926, type: 3}
+  - {fileID: 21300000, guid: 015c311f5a84ace4cb8e0266f08730a2, type: 3}
+  - {fileID: 21300000, guid: f4235a694b35e0845b273b8a8dc63974, type: 3}
+  - {fileID: 21300000, guid: 56b7ee1e6887ea64f88d4c37066fff20, type: 3}
+  - {fileID: 21300000, guid: a06d791f4391fab46a26c0118adac15c, type: 3}
+  - {fileID: 21300000, guid: fdd1a7c27063b4341abb3eeefd66c89f, type: 3}
+  - {fileID: 21300000, guid: 691941ec9d762014a8e90f7796da971e, type: 3}
+  - {fileID: 21300000, guid: 04de477ce728f1e4a962f64b41519e81, type: 3}
+  - {fileID: 21300000, guid: d271b751df2592d4fa4c83d2774d4ffe, type: 3}
+  - {fileID: 21300000, guid: c9b6da6e1164925449fc1d6b05b79e1c, type: 3}
+  Star:
+  - {fileID: 21300000, guid: c3dadf8ab2b27a347ae63b8545d31297, type: 3}
+  - {fileID: 21300000, guid: c8f9bd33fe6550d448e64ddd7bad221d, type: 3}
+  - {fileID: 21300000, guid: db2ef288546f4044e9a636d492587179, type: 3}
+  - {fileID: 21300000, guid: c02a3352da8600d4ab0784f342f101a6, type: 3}
+  Fragment:
+  - {fileID: 21300000, guid: 8e89a87c30f363247afe0fa024f5242c, type: 3}
+  - {fileID: 21300000, guid: f94d6b412b83eca41bb5e390bfcb00d2, type: 3}
+  - {fileID: 21300000, guid: 51ea9e453edd7b74ea5f66c85dca735c, type: 3}
+  - {fileID: 21300000, guid: 19773b36a3ba7184e8c081bad98cf2f4, type: 3}
+  PlateUp: {fileID: 21300000, guid: a676d6b7954443046a96be9f19511d2d, type: 3}
+  PlateDown: {fileID: 21300000, guid: 34eeb8fc614777448a4d2b757d3e3083, type: 3}
+  Checkpoint: {fileID: 21300000, guid: c4011e16164b350438d747756f786354, type: 3}
+  RockDark: {fileID: 21300000, guid: 0b656c17772d06448896ae9781c9804c, type: 3}
+  RockLight: {fileID: 21300000, guid: 1fd0af7eef1b8b04da9f19717c0a6c19, type: 3}
+  Background: {fileID: 21300000, guid: 37f8f753e51cd2d4fb6d60259afcd84d, type: 3}
+  ForegroundGrass: {fileID: 21300000, guid: 683cbe8ffa1bfef48b33c734937846a6, type: 3}
+  Title: {fileID: 21300000, guid: aa3f7ceeec3b8254e9a5e162ff8c8c3d, type: 3}
+  PauseProgress:
+  - {fileID: 21300000, guid: 8aa4f385b1749c94aaf8ec215960601e, type: 3}
+  - {fileID: 21300000, guid: e9cbe852b95839647b39a2013a93e4d8, type: 3}
+  - {fileID: 21300000, guid: 2fb46ad7b53214e4590a9b24c353c416, type: 3}
+  - {fileID: 21300000, guid: 7d78cef36e350ea4fb9d39cb5188c259, type: 3}
+  PauseBlur: {fileID: 2100000, guid: caad1aec305423f4dabc9e09c4fceb3a, type: 2}
+  Jump: {fileID: 21300000, guid: 709663ae9a324dc4dbb16070bd0f9e67, type: 3}
+  Lyre: {fileID: 21300000, guid: 04186b6556948c446af3831f5ecc61b0, type: 3}
+  DrumIdle: {fileID: 21300000, guid: 85b2ece6708bb8b4681e962a03d4860f, type: 3}
+  DrumHit:
+  - {fileID: 21300000, guid: b1537c8582f918c4c81c77aa2f9c9b38, type: 3}
+  - {fileID: 21300000, guid: 67cc49cd4252a644f9874403914e3dca, type: 3}
+  - {fileID: 21300000, guid: 6e694851969647f459596f5065b12005, type: 3}
+  - {fileID: 21300000, guid: 927fbef0cfb5a1c4eaa2c827725bbcf4, type: 3}
+  - {fileID: 21300000, guid: 8918a4d255f18ef4d9b75cb803afc484, type: 3}
+  - {fileID: 21300000, guid: acc7f4affc615ec4bbeeaf2b2a3440ad, type: 3}
+  - {fileID: 21300000, guid: 3ef48615a2c03bf4ab47d100d2706791, type: 3}
+  - {fileID: 21300000, guid: 85dd1eb3acc7cae43968705f8f9083f0, type: 3}
+  - {fileID: 21300000, guid: 84d02838d19ef984a841b0a1cadea452, type: 3}
+  - {fileID: 21300000, guid: 1e15166063cf3b64380fc17bec50e0f4, type: 3}
+  TerrainMiddle: {fileID: 21300000, guid: 4ef942e671ec8ec4db005a8daa7560d1, type: 3}
+  TerrainLeft: {fileID: 21300000, guid: d7b9ee7fdcd373648ae8708613cb0ea9, type: 3}
+  TerrainRight: {fileID: 21300000, guid: 97019978cdc4e5144a8fa3200a3ddc06, type: 3}
+  TerrainSoil: {fileID: 21300000, guid: f235108be036d9a49bd22d5da22b8d36, type: 3}
+  TerrainBrush: {fileID: 21300000, guid: 5b2612ca2777bed4a8e8416f74152271, type: 3}
+  TerrainMaterial: {fileID: 2100000, guid: afc563ed58e28ba41bec97b2249a09a3, type: 2}
+  TerrainAtlasRects:
+  - serializedVersion: 2
+    x: 0.0009765625
+    y: 0.5019531
+    width: 0.24804688
+    height: 0.49609375
+  - serializedVersion: 2
+    x: 0.25097656
+    y: 0.5019531
+    width: 0.24804688
+    height: 0.49609375
+  - serializedVersion: 2
+    x: 0.50097656
+    y: 0.5019531
+    width: 0.24804688
+    height: 0.49609375
+  - serializedVersion: 2
+    x: 0.75097656
+    y: 0.7001953
+    width: 0.24804688
+    height: 0.29785156
+  - serializedVersion: 2
+    x: 0.0009765625
+    y: 0.001953125
+    width: 0.24804688
+    height: 0.49609375

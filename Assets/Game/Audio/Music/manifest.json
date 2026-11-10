@@ -1,0 +1,49 @@
+{
+  "revision": "menu-music-20261111",
+  "artist": "Larse",
+  "title": "启程之前",
+  "artist_url": "https://space.bilibili.com/18212244/",
+  "track_url": "https://www.bilibili.com/video/BV1QhA5efEq9/",
+  "source": "../H-ONE-arts/audio/Larse - 【免费可商用BGM】启程之前.mp3",
+  "source_sha256": "638b78448af117841980ee6885b12a38d7035eb4f9ee603c46f40bc6495307da",
+  "output": "larse_before_departure.mp3",
+  "output_sha256": "638b78448af117841980ee6885b12a38d7035eb4f9ee603c46f40bc6495307da",
+  "processing": "Byte-identical project copy, renamed only; source untouched.",
+  "permission_basis": "2026-11-11 user supplied original author commercial permission and attribution; music rights remain with Larse, outside code MIT license.",
+  "usage": "MainMenu/MenuMusic; Credits and Settings retain playback, scene unload stops it.",
+  "routing": "Core.mixer / Music / MusicVol",
+  "import": "Stereo, Streaming, preserve sample rate, preload off, normalize off.",
+  "other_tracks": "灰焰酒馆 (BV1wF7azsEXQ), 黑森林废墟 (BV1w1ojYiEdi): not copied or assigned.",
+  "source_readme_sha256": "a1aa5962e74a380f08451f486a7c4b6594ecdcbc989de992df62ff420f061999",
+  "rights": "All rights reserved. Larse.",
+  "duration_sec": 101.564079,
+  "sample_rate": 44100,
+  "channels": 2,
+  "integration_record": "docs/17-主页音乐与制作名单.md",
+  "status": "integrated_runtime_verified_pending_device_listening",
+  "validation": {
+    "editmode_passed": 29,
+    "playmode_full_passed": 41,
+    "playmode_full_total": 42,
+    "new_presentation_tests_passed": 2,
+    "existing_first_level_input_route_recheck_passed": 1,
+    "runtime_frames": [
+      63,
+      16264
+    ],
+    "game_view_resolutions": [
+      "1280x720",
+      "1920x1080",
+      "1280x800"
+    ],
+    "sampled_music_muted_peak": 0,
+    "loop_playing_after_wrap": true,
+    "human_device_listening_acceptance": false,
+    "windows_build": {
+      "path": "Builds/MenuCredits/H-ONE.exe",
+      "result": "Succeeded",
+      "errors": 0,
+      "existing_package_warnings": 186
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "revision": "procedural-feedback-20261110",
+  "date": "2026-11-10",
+  "kind": "runtime geometry, UI and synthesized PCM; technical feedback, not formal art/audio delivery",
+  "provenance": "Project-authored source code; no external assets or AI image generation. Existing art provenance stays in Delivery01/02 SOURCE_USAGE.md; P0 README; Fonts manifest and OFL-1.1.",
+  "art_ledger": "06-占位美术替换Checklist.md §11",
+  "base_commit": "069b7e6012e02a6f6dc129ae227502a9db18b8fb",
+  "files": [
+    {
+      "path": "Assets/Game/Runtime/Audio/CoreAudioFeedback.cs",
+      "sha256": "2bbde1f093b3d30cdfdec459ecc6bdfe4e144082aae4cae61cda5ef10be47231"
+    },
+    {
+      "path": "Assets/Game/Runtime/Audio/CoreAudioFeedback.cs.meta",
+      "sha256": "6d4d8a89d5036a196fe92d94dc2e6d257dbd549d8130bcd966cad356dfc1f406"
+    },
+    {
+      "path": "Assets/Game/Runtime/Audio/ProceduralImpactAudio.cs",
+      "sha256": "44753e039890834ddabd26ce794a2714eb9f00202a711b1ccc034c918d8c45b0"
+    },
+    {
+      "path": "Assets/Game/Runtime/Audio/ProceduralImpactAudio.cs.meta",
+      "sha256": "ed25912d624ef3fd48acafe99ae268775afd1dc35c7f3c7b3e9837b7aef61900"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelSession.cs",
+      "sha256": "e66148dca55ed3323a0ca01e18ca1a0e86fa785a96c605026d76738aa48a0816"
+    },
+    {
+      "path": "Assets/Game/Runtime/Level/LevelSession.cs.meta",
+      "sha256": "6de56e99dca04664cb144e879c324bcd8a09962f4272b39560d6c53415720843"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/BrittleWall.cs",
+      "sha256": "75c0d49b4c41a2661195f4d3c4ee910a55d89b0df23463c932b689bc06ccc39b"
+    },
+    {
+      "path": "Assets/Game/Runtime/Mechanisms/BrittleWall.cs.meta",
+      "sha256": "818a8265e6b31f68133705dcb3de2e9f3e966a1ba84a8290d5fb4c1a45a8a6d9"
+    },
+    {
+      "path": "Assets/Game/Runtime/Player/PlayerStateMachine.cs",
+      "sha256": "a0742205948a4a6d9a53e7226f7586c71d5d87dee9bdace94c967626a207f05c"
+    },
+    {
+      "path": "Assets/Game/Runtime/Player/PlayerStateMachine.cs.meta",
+      "sha256": "21f49b6ec67cd2acc9437ab9fc9695a7bca370a445a985c7a36e8bc00b71287e"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCamera2D.cs",
+      "sha256": "03b9b26403ba6965a1cd8bc9eeeb5a05c0554e93f92bdbd71787cb337ef86fac"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ChapterCamera2D.cs.meta",
+      "sha256": "a66d03982a585cf1aa5dc097fc2f7cd8a42a0f717973937b4a66fd286ed1d681"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/FeedbackMenuStyle.cs",
+      "sha256": "9cc01a3b79c2d99bca467c6f4d7cb3456dfa466fc07345c403f8040cf17455dd"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/FeedbackMenuStyle.cs.meta",
+      "sha256": "0305c5834e4c00a3e2e684fa18fa22d9e93b3a6ffae0ad18ada779fa69a000a1"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameFeelInstaller.cs",
+      "sha256": "cd9fb36339569aa1d9c527358500e0e843d56567c22f56eefe54aef5a94a9bfa"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameFeelInstaller.cs.meta",
+      "sha256": "fd3036fb224ee20046d56030de401d0be1aa99021f63c7c485d4caa73ad68d01"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameplayFeedbackView.cs",
+      "sha256": "27e342caf6fa710dff61fa42a662206f3f53eae2a723a3c334775bd92d22ea1b"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/GameplayFeedbackView.cs.meta",
+      "sha256": "43e3bf667dab58bb7dcfd57a227e02f4a9558e4af0502555adeb1012724b548a"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ImpactFeedbackView.cs",
+      "sha256": "7cec37f992756bdd7f774f1b32fa9faa526860bd84544fee769020acf064d706"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ImpactFeedbackView.cs.meta",
+      "sha256": "5751b12bfe93ceb76d81b4b798d024659e277009f2e2e740f0ffde9d06a46b56"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/InstrumentArtView.cs",
+      "sha256": "e2de27d0fafa1392c8ade035c080fe57db3d2238821264676e6d6fa4f4ce0e10"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/InstrumentArtView.cs.meta",
+      "sha256": "f8c24bd59f26651e62ededeff68605f4dd4bd15fa069c291f11df9e7dbd6035f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/MainMenuController.cs",
+      "sha256": "c6125dc714f42a6ece8c651af2493f05421d0d1c14edd6eb5b300633f0f9ee3e"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/MainMenuController.cs.meta",
+      "sha256": "908d12a14aee8cb0767d3b5310d44ee149c6def00f49ee281c2743b7c8ebf67f"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PlayerView.cs",
+      "sha256": "3453e5c2317eede0ab82a2dbba417db9c37c48327193f101497a0e7ba02be924"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PlayerView.cs.meta",
+      "sha256": "15e013ebf713bee81cf495e4fdedd82f7959ebd4f35e79e7cb74916a8ee71895"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ProceduralHudGraphic.cs",
+      "sha256": "56b1fe28f17b18e314a176a7acc76fb2541b673d3700e366ebc0ad73affeae90"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/ProceduralHudGraphic.cs.meta",
+      "sha256": "573009931bacefb87782e471a938a8a4726c0e048f845da17f72930725835f25"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PuzzlePauseMenu.cs",
+      "sha256": "54a50a2cd3d7cee0a71c5722f8b7fd837135cf3c10665ce936062c108db94d7e"
+    },
+    {
+      "path": "Assets/Game/Runtime/Presentation/PuzzlePauseMenu.cs.meta",
+      "sha256": "3d291552f3db253275f1b14155a99fa3869ea5c1b4e53dd7d4335b8553e9865d"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarFlightMotor2D.cs",
+      "sha256": "44a077d4f09bfb5dacb83af8655830503df100a72e6a1b5eebfe0e118ea877f2"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarFlightMotor2D.cs.meta",
+      "sha256": "e9fc05cf139d51c765a7b9c40d7c6f436d62ed44aa80026a3ac74493386d94e1"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarPathSolver.cs",
+      "sha256": "c773c78208abdc52b8853eab41bd9476e3d0e673949af17c8321e586573184b8"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/StarPathSolver.cs.meta",
+      "sha256": "662402251579332692a383c923c968572d239de5d1dcf65e2045869dc1b08545"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/TrajectoryPreview.cs",
+      "sha256": "299bfcf21693b03355c5dce2ade267da17911718c4d5d8173a65f514e9190505"
+    },
+    {
+      "path": "Assets/Game/Runtime/Star/TrajectoryPreview.cs.meta",
+      "sha256": "997096914cf5b381e6d49b66effd0e97f76a8fb12bc68f7ea9e592286bd38dd2"
+    },
+    {
+      "path": "Assets/Game/Tests/EditMode/CoreRulesTests.cs",
+      "sha256": "9b433549105cc4f7c199da4ce1dd0ee8db2982b8cbcaa877867bf9dda46b0ab1"
+    },
+    {
+      "path": "Assets/Game/Tests/EditMode/CoreRulesTests.cs.meta",
+      "sha256": "5788d5bacc8ddd1e67fb5e9bdde464db062c0555cec97c109a23fb5b4a37bad1"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/GameplayFeedbackTests.cs",
+      "sha256": "aca17cacea5f5483d48fb526d24fc948a199f2264dcada9856a38e8b130d2ef5"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/GameplayFeedbackTests.cs.meta",
+      "sha256": "6898d98d1b1a5f9cb46f3ac148b7ca5339e44cbc70ae4e9c383752411e8e8a81"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/ImpactAudioTests.cs",
+      "sha256": "da738484ae37cce11581075ed56034fc0cbe119dec071adbec8d395efa89673d"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/ImpactAudioTests.cs.meta",
+      "sha256": "f7b455e85cd01efd7918ffa770f8f18ac48ef771edb5ed8542ca605b01deb8b8"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/ImpactVisualTests.cs",
+      "sha256": "a60b857ac7445dbaae3035e48b1e1dfdcc7fa1ce405a7b804e7cef64c41ed8f6"
+    },
+    {
+      "path": "Assets/Game/Tests/PlayMode/ImpactVisualTests.cs.meta",
+      "sha256": "635f6271a45f6114fe68a0e2655a4e540151e2813ceb41e7d1d2c998b64d59ea"
+    }
+  ]
+}

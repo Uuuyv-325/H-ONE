@@ -1,0 +1,12 @@
+.editor-root { padding: 12px; }
+.title { font-size: 18px; -unity-font-style: bold; margin-bottom: 8px; }
+.description { white-space: normal; margin-bottom: 10px; color: #c4cbd6; }
+.section { margin-bottom: 12px; padding: 8px; border-width: 1px; border-color: #49505c; }
+.section > Button { margin-top: 4px; min-height: 24px; }
+.section > Label { white-space: normal; margin-bottom: 6px; }
+.section-title { -unity-font-style: bold; color: #f5d281; }
+.terrain-brush-preview {
+    width: 64px;
+    height: 64px;
+    -unity-background-scale-mode: scale-to-fit;
+}

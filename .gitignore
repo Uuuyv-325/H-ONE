@@ -21,6 +21,19 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+# Local captures and generated Editor preferences.
+/Assets/Temp/
+/Assets/Temp.meta
+/ProjectSettings/PackageManagerSettings.asset
+/ProjectSettings/SceneTemplateSettings.json
+/ProjectSettings/Packages/com.unity.pipeline/
+/artifacts/
+/dist/
+# Local preparation scripts are kept outside version control.
+/tools/
+# CI activation material must remain in GitHub Secrets.
+*.alf
+*.ulf
 *.log
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.

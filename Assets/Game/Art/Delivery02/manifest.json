@@ -1,0 +1,660 @@
+{
+  "revision": "delivery02-20261110",
+  "source_readme_sha256": "a1aa5962e74a380f08451f486a7c4b6594ecdcbc989de992df62ff420f061999",
+  "policy": "read-only inspection, crop/layout adaptation and copies; no AI image generation or training",
+  "assets": [
+    {
+      "file": "human_jump.png",
+      "source": "jump.png",
+      "source_sha256": "91dab2e0b83690e72daa4d91d27f925f7183dbef8b53d271eadc98602c1d6362",
+      "rect_top_left": [
+        317,
+        0,
+        2858,
+        3652
+      ],
+      "crop_size": [
+        2541,
+        3652
+      ],
+      "resized_to": [
+        529,
+        760
+      ],
+      "canvas": [
+        1024,
+        832
+      ],
+      "paste_offset": [
+        247,
+        40
+      ],
+      "pivot": [
+        0.5,
+        0.038461538461538464
+      ],
+      "ppu": 512,
+      "output_sha256": "70691e6c5345879cd459364423dc42cfed8d5fd00f668e03c66655ef4b799a83"
+    },
+    {
+      "file": "lyre.png",
+      "source": "IMG_6092.PNG",
+      "source_sha256": "36346f3005a05ac02eb5e2a299768927ca34f6247da7b758b359efed7b95cc02",
+      "rect_top_left": [
+        990,
+        63,
+        3193,
+        3415
+      ],
+      "crop_size": [
+        2203,
+        3352
+      ],
+      "resized_to": [
+        673,
+        1024
+      ],
+      "canvas": [
+        673,
+        1024
+      ],
+      "paste_offset": null,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "d8766a3f2c2e6b9a5750401501c604714bfbc6adbd9e0ad840a2a84fa9fb2370"
+    },
+    {
+      "file": "drum_idle.png",
+      "source": "IMG_6089.PNG",
+      "source_sha256": "c425acfea44d8019d3566c714ac9d17795dedede793ad999420543b16bfa2d0a",
+      "rect_top_left": [
+        1180,
+        376,
+        2670,
+        3588
+      ],
+      "crop_size": [
+        1490,
+        3212
+      ],
+      "resized_to": [
+        465,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        23,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "469b6bb47ceb3b00573772826ada93defeb55a351fdb5d76686f241c327f2412"
+    },
+    {
+      "file": "drum_hit_00.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        224,
+        140,
+        523,
+        785
+      ],
+      "crop_size": [
+        299,
+        645
+      ],
+      "resized_to": [
+        464,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        24,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "61a0b0b56b640eea09572e75728b9b857b775e0be884e20a3920180737424edb"
+    },
+    {
+      "file": "drum_hit_01.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        692,
+        140,
+        1032,
+        785
+      ],
+      "crop_size": [
+        340,
+        645
+      ],
+      "resized_to": [
+        528,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        -8,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "b1a2ef363843534627372e48a213b03d1dd36646e9facde642706ceb88370403"
+    },
+    {
+      "file": "drum_hit_02.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        1155,
+        140,
+        1462,
+        785
+      ],
+      "crop_size": [
+        307,
+        645
+      ],
+      "resized_to": [
+        477,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        17,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "21e7711b9aecedfc08f4900b99dffbacb97c6b0a7472f1f23eaf597a408eef21"
+    },
+    {
+      "file": "drum_hit_03.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        1604,
+        140,
+        1937,
+        785
+      ],
+      "crop_size": [
+        333,
+        645
+      ],
+      "resized_to": [
+        517,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        -3,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "cb21e5beb1f2fa049252dbf993c6178fc1dde2c05bb3adf0a5f15b11250ae634"
+    },
+    {
+      "file": "drum_hit_04.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        2073,
+        140,
+        2433,
+        785
+      ],
+      "crop_size": [
+        360,
+        645
+      ],
+      "resized_to": [
+        559,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        -24,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "905dabebb9af7da48d650ad7d7cd5fe8b9efba8ea6a1109bcdb927ea58a1bf98"
+    },
+    {
+      "file": "drum_hit_05.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        2564,
+        140,
+        2853,
+        785
+      ],
+      "crop_size": [
+        289,
+        645
+      ],
+      "resized_to": [
+        449,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        31,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "1d566d1f3831ffc5bd5937d30aae90f19638509fd3d9dc8006026b213a59fa73"
+    },
+    {
+      "file": "drum_hit_06.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        3014,
+        140,
+        3350,
+        785
+      ],
+      "crop_size": [
+        336,
+        645
+      ],
+      "resized_to": [
+        522,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        -5,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "d70e3d8bf54efdfbccf0686d7414791aaf6b829941fc677be7be6e2b185d5473"
+    },
+    {
+      "file": "drum_hit_07.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        224,
+        919,
+        523,
+        1565
+      ],
+      "crop_size": [
+        299,
+        646
+      ],
+      "resized_to": [
+        464,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        24,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "0712af0759b775e7ded25442595df11b64f54bcf08672b063fd14f2502a88b27"
+    },
+    {
+      "file": "drum_hit_08.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        692,
+        919,
+        1032,
+        1565
+      ],
+      "crop_size": [
+        340,
+        646
+      ],
+      "resized_to": [
+        528,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        -8,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "b8af719d431ad132c069477de6e0e914f1a57f30bf1e2a1eaf3b93bce2239a7d"
+    },
+    {
+      "file": "drum_hit_09.png",
+      "source": "IMG_6090.PNG",
+      "source_sha256": "bd2748608b5e46fdaf786e6e2ed8915980e1543620a5aba3e264c84ad1d4536a",
+      "rect_top_left": [
+        1155,
+        919,
+        1462,
+        1565
+      ],
+      "crop_size": [
+        307,
+        646
+      ],
+      "resized_to": [
+        477,
+        1002
+      ],
+      "canvas": [
+        512,
+        1024
+      ],
+      "paste_offset": [
+        17,
+        11
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 512,
+      "output_sha256": "c005b54cff0e8f17c6e0d3636f738bb369847ad4854dffb2200d4b8974359e0b"
+    },
+    {
+      "file": "terrain_brush.png",
+      "source": "卡通风格草地背景图/IMG_6075.PNG",
+      "source_sha256": "8f957f1da79249a42f2392076e9c3714cef1649b9f8eea07f6532b0baa344143",
+      "rect_top_left": [
+        0,
+        0,
+        3840,
+        3840
+      ],
+      "crop_size": [
+        3840,
+        3840
+      ],
+      "resized_to": [
+        1024,
+        1024
+      ],
+      "canvas": [
+        1024,
+        1024
+      ],
+      "paste_offset": null,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 1024,
+      "output_sha256": "d56f16753162e491609448d7d6039619d18424d5df24d84d1e850d3c70bfb9c1"
+    },
+    {
+      "file": "terrain_middle.png",
+      "source": "卡通风格草地背景图/IMG_6076.PNG",
+      "source_sha256": "5637f4915d4c9f26d3837473b8953080e6bfbaf7b5ce839fe3f6750092944d7e",
+      "rect_top_left": [
+        0,
+        0,
+        3840,
+        3840
+      ],
+      "crop_size": [
+        3840,
+        3840
+      ],
+      "resized_to": [
+        1024,
+        1024
+      ],
+      "canvas": [
+        1024,
+        1024
+      ],
+      "paste_offset": null,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 1024,
+      "output_sha256": "278357e784c204ecc4b0bb6e116fef95f5af28e9d3df7973fd7070d5998cd6de"
+    },
+    {
+      "file": "terrain_right.png",
+      "source": "卡通风格草地背景图/IMG_6077.PNG",
+      "source_sha256": "9dbc6f398a8aac7e1c257eb56c406fcbd6fe5c8f38d55ee0f9d3cd7c3c9b3932",
+      "rect_top_left": [
+        0,
+        0,
+        3840,
+        3840
+      ],
+      "crop_size": [
+        3840,
+        3840
+      ],
+      "resized_to": [
+        1024,
+        1024
+      ],
+      "canvas": [
+        1024,
+        1024
+      ],
+      "paste_offset": null,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 1024,
+      "output_sha256": "f94c29ad91866bf2fe9ab9ca6acaf8c9bd9b69d7dd1b271a577904f016479052"
+    },
+    {
+      "file": "terrain_left.png",
+      "source": "卡通风格草地背景图/IMG_6078.PNG",
+      "source_sha256": "b67145ab07c4334fc81e7a6739f09355e7e89bda2c88e3b23538425ebf118667",
+      "rect_top_left": [
+        0,
+        0,
+        3840,
+        3840
+      ],
+      "crop_size": [
+        3840,
+        3840
+      ],
+      "resized_to": [
+        1024,
+        1024
+      ],
+      "canvas": [
+        1024,
+        1024
+      ],
+      "paste_offset": null,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 1024,
+      "output_sha256": "2bc385c7fbab8d01a26d2d264338b165b5fd4de43a595700f1d292d0af316fbc"
+    },
+    {
+      "file": "terrain_soil.png",
+      "source": "卡通风格草地背景图/IMG_6076.PNG",
+      "source_sha256": "5637f4915d4c9f26d3837473b8953080e6bfbaf7b5ce839fe3f6750092944d7e",
+      "rect_top_left": [
+        0,
+        1536,
+        3840,
+        3840
+      ],
+      "crop_size": [
+        3840,
+        2304
+      ],
+      "resized_to": [
+        1024,
+        614
+      ],
+      "canvas": [
+        1024,
+        614
+      ],
+      "paste_offset": null,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu": 1024,
+      "output_sha256": "dfb32e64bbe154cad3bafacc23803d12ad1a9368be7e612ea21792d468937b8d"
+    }
+  ],
+  "terrain_atlas": {
+    "file": "terrain_atlas.png",
+    "regions": [
+      [
+        0.0009765625,
+        0.501953125,
+        0.248046875,
+        0.49609375
+      ],
+      [
+        0.2509765625,
+        0.501953125,
+        0.248046875,
+        0.49609375
+      ],
+      [
+        0.5009765625,
+        0.501953125,
+        0.248046875,
+        0.49609375
+      ],
+      [
+        0.7509765625,
+        0.7001953125,
+        0.248046875,
+        0.2978515625
+      ],
+      [
+        0.0009765625,
+        0.001953125,
+        0.248046875,
+        0.49609375
+      ]
+    ],
+    "order": [
+      "left",
+      "middle",
+      "right",
+      "soil",
+      "brush"
+    ],
+    "output_sha256": "206546b8503feb4121179ad3c2bae5510eb9a4774e0e5f21737df6c418626ca9"
+  },
+  "deferred": [
+    {
+      "source": "IMG_6091.PNG",
+      "reason": "2026-11-10 user: purpose undecided; defer"
+    }
+  ],
+  "reference_only": [
+    "walking.gif",
+    "turn_star.gif"
+  ],
+  "layered_sources": "not delivered",
+  "independent_license_manifest": "not delivered",
+  "integrations": {
+    "revision": "remaining-art-20261110",
+    "art_set": "Assets/Game/Art/Delivery01/ChapterArt.asset",
+    "scenes": [
+      "Assets/Game/Scenes/Chapter01_Core.unity",
+      "Assets/Game/Scenes/Chapter01_ShadowSlice.unity",
+      "Assets/Game/Scenes/M2_MechanismGallery.unity"
+    ],
+    "terrain": "Solid.prefab/GrassCells; GrassTerrainView; box collision dimensions retained",
+    "circle_brush": "ChapterLevelEditorWindow preview; RemainingArtAuthoring.PaintGrassDisk selects square cells",
+    "instruments": "Lyre.prefab/Visual; Drum.prefab/Visual; M2_MechanismGallery/Mechanisms/04_Instruments",
+    "delivery_ids": [
+      "CH-03/04",
+      "ENV-01/02",
+      "ME-04/05/08",
+      "FX-04/09/10"
+    ],
+    "status": "integrated awaiting full art acceptance",
+    "remaining": "full states, layered masters, independent attribution/license manifest, final teaching and instrument audio"
+  },
+  "creator": "不眠巷",
+  "attribution_updated": "2026-11-11 user corrected artist credit to 不眠巷; see CREDITS.md."
+}

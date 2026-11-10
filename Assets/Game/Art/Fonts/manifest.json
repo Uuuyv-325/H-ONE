@@ -1,0 +1,16 @@
+{
+  "revision": "credits-attribution-20261111",
+  "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+  "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+  "license": "OFL-1.1",
+  "output_sha256": "78919b04c53f9906934adac676164d438373af73decdb13e43a4d3e5fe40166e",
+  "preserved_previous_codepoints": 219,
+  "glyph_scope": "223 supported codepoints: all 219 previous codepoints plus 眠/巷/阿/锰 for the user-corrected credits; weight 400; font GUID unchanged.",
+  "added_codepoints": [
+    "U+5DF7",
+    "U+7720",
+    "U+9530",
+    "U+963F"
+  ],
+  "fonttools_version": "4.46.0"
+}

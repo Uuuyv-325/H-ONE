@@ -1,0 +1,247 @@
+name: Unity CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: Deploy WebGL to Pages (main branch only)
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# Serialize main builds; replace obsolete PR runs before they consume a license.
+concurrency:
+  group: unity-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validate:
+    name: CI configuration
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Lint GitHub Actions workflows
+        run: go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.12 -color
+
+  license:
+    name: Unity license configuration
+    needs: validate
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - name: Check activation secrets
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          UNITY_LICENSE_SERVER: ${{ secrets.UNITY_LICENSE_SERVER }}
+        shell: bash
+        run: |
+          if [[ -n "$UNITY_LICENSE_SERVER" ]]; then
+            exit 0
+          fi
+          if [[ -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]] &&
+             [[ -n "$UNITY_LICENSE" || -n "$UNITY_SERIAL" ]]; then
+            exit 0
+          fi
+          echo '::error::Configure UNITY_EMAIL, UNITY_PASSWORD and UNITY_LICENSE (Personal) or UNITY_SERIAL (Pro), or UNITY_LICENSE_SERVER. See docs/07-CI-CD与GitHub配置.md. Fork and Dependabot PRs do not receive these secrets.'
+          exit 1
+
+  tests:
+    name: Unity tests (EditMode + PlayMode)
+    needs: license
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      checks: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - name: Record runner file ownership
+        id: runner
+        run: echo "owner=$(id -u):$(id -g)" >> "$GITHUB_OUTPUT"
+      - name: Restore test import cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: Library
+          key: Library-tests-${{ runner.os }}-${{ hashFiles('Packages/**', 'ProjectSettings/**') }}-${{ github.sha }}
+          restore-keys: |
+            Library-tests-${{ runner.os }}-${{ hashFiles('Packages/**', 'ProjectSettings/**') }}-
+      - name: Run EditMode and PlayMode tests
+        uses: game-ci/unity-test-runner@32e57712352b500e17974b245a6dce9e11a73213 # v4.4.0
+        env:
+          # v4.4.0 emits an unsupported --no-coverageEnabled flag for the false input.
+          # Use the CLI's supported environment option to disable coverage instead.
+          GAME_CI_COVERAGE_ENABLED: 'false'
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+        with:
+          unityVersion: auto
+          cliVersion: v0.1.72
+          testMode: all
+          # TODO(rendered-playmode): restore this screenshot test after the
+          # non-batchmode Linux Editor startup issue is resolved. See docs/07.
+          customParameters: >-
+            -testFilter !^HOne\.Game\.Tests\.DeliveredArtTests\.PauseShowsActualProgressFreezesAnimationAndReleasesCapture$
+          artifactsPath: artifacts/tests
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          checkName: Unity test results
+          unityLicensingServer: ${{ secrets.UNITY_LICENSE_SERVER }}
+          chownFilesTo: ${{ steps.runner.outputs.owner }}
+      - name: Upload test reports and Editor logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: unity-test-results
+          path: |
+            artifacts/tests/
+            Logs/
+          if-no-files-found: warn
+          retention-days: 14
+
+  build:
+    name: Build ${{ matrix.platform }}
+    needs: tests
+    # PRs run both test suites. Main pushes and manual runs also build all players.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      # Each action activates and returns a license; allow one build seat at a time.
+      max-parallel: 1
+      matrix:
+        include:
+          - platform: Windows
+            target: StandaloneWindows64
+          - platform: Linux
+            target: StandaloneLinux64
+          - platform: macOS
+            target: StandaloneOSX
+          - platform: WebGL
+            target: WebGL
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - name: Record runner file ownership
+        id: runner
+        run: echo "owner=$(id -u):$(id -g)" >> "$GITHUB_OUTPUT"
+      - name: Restore platform import cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: Library
+          key: Library-${{ matrix.target }}-${{ runner.os }}-${{ hashFiles('Packages/**', 'ProjectSettings/**') }}-${{ github.sha }}
+          restore-keys: |
+            Library-${{ matrix.target }}-${{ runner.os }}-${{ hashFiles('Packages/**', 'ProjectSettings/**') }}-
+      - name: Build player
+        uses: game-ci/unity-builder@4423ee75828dff56037d1d1cfdac6b68e3a6ba00 # v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+        with:
+          unityVersion: auto
+          targetPlatform: ${{ matrix.target }}
+          buildsPath: build
+          buildName: H-ONE
+          buildMethod: HOne.Game.Editor.CiBuild.Build
+          manualExit: true
+          versioning: None
+          unityLicensingServer: ${{ secrets.UNITY_LICENSE_SERVER }}
+          chownFilesTo: ${{ steps.runner.outputs.owner }}
+      - name: Archive player (preserve executable bits and symlinks)
+        run: |
+          mkdir -p dist
+          tar -czf "dist/H-ONE-${{ matrix.platform }}.tar.gz" -C "build/${{ matrix.target }}" .
+      - name: Upload player
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: H-ONE-${{ matrix.platform }}
+          path: dist/*.tar.gz
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: unity-build-logs-${{ matrix.platform }}
+          path: |
+            build/**/*.log
+            Logs/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Check Pages entry point
+        if: >-
+          matrix.target == 'WebGL' && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'push' || inputs.deploy_pages)
+        run: test -s build/WebGL/H-ONE/index.html
+      - name: Upload Pages site
+        if: >-
+          matrix.target == 'WebGL' && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'push' || inputs.deploy_pages)
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: build/WebGL/H-ONE
+
+  gate:
+    name: CI gate
+    if: always()
+    needs: [validate, license, tests, build]
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - name: Require completed checks
+        env:
+          VALIDATION_RESULT: ${{ needs.validate.result }}
+          LICENSE_RESULT: ${{ needs.license.result }}
+          TEST_RESULT: ${{ needs.tests.result }}
+          BUILD_RESULT: ${{ needs.build.result }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          [[ "$VALIDATION_RESULT" == success && "$LICENSE_RESULT" == success && "$TEST_RESULT" == success ]]
+          if [[ "$EVENT_NAME" != pull_request ]]; then
+            [[ "$BUILD_RESULT" == success ]]
+          fi
+
+  deploy:
+    name: Deploy WebGL to GitHub Pages
+    needs: gate
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' ||
+       (github.event_name == 'workflow_dispatch' && inputs.deploy_pages))
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    steps:
+      - name: Check Pages configuration
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
